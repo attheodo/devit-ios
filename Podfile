@@ -4,4 +4,5 @@ use_frameworks!
 target 'DEVit' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 end
