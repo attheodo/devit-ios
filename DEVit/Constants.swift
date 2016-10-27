@@ -10,18 +10,24 @@ import Foundation
 
 struct Constants {
     
+    /// Constants related to Storyboards
     struct Storyboards {
-
+        
+        /// Main storyboard name
         static let mainStoryboard = "Main"
         
         struct Scenes {
+            /// `LoginViewController` scene storyboard id
             static let mainStoryboardLoginViewControllerScene = "LoginViewController"
         }
 
     }
     
     struct UserDefaults {
+        
+        /// The currently saved email address of the user
         static let userEmail = "kDEVitUserDefaultsUserEmail"
+    
     }
     
 }
