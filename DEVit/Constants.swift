@@ -8,6 +8,20 @@
 
 import Foundation
 
-public enum MainStoryboard: String {
-    case loginScene = "LoginViewController"
+struct Constants {
+    
+    struct Storyboards {
+
+        static let mainStoryboard = "Main"
+        
+        struct Scenes {
+            static let mainStoryboardLoginViewControllerScene = "LoginViewController"
+        }
+
+    }
+    
+    struct UserDefaults {
+        static let userEmail = "kDEVitUserDefaultsUserEmail"
+    }
+    
 }
