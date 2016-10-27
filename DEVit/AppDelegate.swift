@@ -8,15 +8,26 @@
 
 import UIKit
 
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var firebaseService: FirebaseService!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        FIRApp.configure()
+        firebaseService = FirebaseService()
+        
+        loadStoryboard()
+        
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,7 +51,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    private func loadStoryboard() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if firebaseService.isLoggedIn() {
+        
+            let rootVC = storyboard.instantiateInitialViewController()
+            window!.rootViewController = rootVC
+            window!.makeKeyAndVisible()
+        
+        } else {
+           
+            let rootVC = storyboard.instantiateViewController(withIdentifier: MainStoryboard.loginScene.rawValue)
+            window!.rootViewController = rootVC
+            window!.makeKeyAndVisible()
+        
+        }
 
+    }
 
 }
 
