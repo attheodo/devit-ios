@@ -50,6 +50,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D22AAA81DC1FF140020ABB3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DF4335A1DC1222000D7510A /* FirstViewController.swift */,
+				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4D22AAA91DC1FF1F0020ABB3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4DF4335E1DC1222000D7510A /* Main.storyboard */,
+				4DF433631DC1222000D7510A /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4D22AAAA1DC1FF2B0020ABB3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4DF433611DC1222000D7510A /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		4D22AAAB1DC1FF300020ABB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DF433661DC1222000D7510A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4DF4334C1DC1221F00D7510A = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				4DF433581DC1222000D7510A /* AppDelegate.swift */,
-				4DF4335A1DC1222000D7510A /* FirstViewController.swift */,
-				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
-				4DF4335E1DC1222000D7510A /* Main.storyboard */,
-				4DF433611DC1222000D7510A /* Assets.xcassets */,
-				4DF433631DC1222000D7510A /* LaunchScreen.storyboard */,
-				4DF433661DC1222000D7510A /* Info.plist */,
+				4D22AAA81DC1FF140020ABB3 /* View Controllers */,
+				4D22AAA91DC1FF1F0020ABB3 /* Storyboards */,
+				4D22AAAA1DC1FF2B0020ABB3 /* Assets */,
+				4D22AAAB1DC1FF300020ABB3 /* Supporting Files */,
 			);
 			path = DEVit;
 			sourceTree = "<group>";
