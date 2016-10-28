@@ -20,6 +20,8 @@ public class Talk: Mappable, CustomStringConvertible {
         case speaker = "speaker"
     }
     
+    /// The id of the talk
+    var id: String? = nil
     /// The order of the talk in the schedule
     var order: Int? = 0
     /// The name of the talk
@@ -45,9 +47,11 @@ public class Talk: Mappable, CustomStringConvertible {
     
     public func mapping(map: Map) {
         
+        self.order <- map["id"]
         self.order <- map["order"]
         self.name <- map["name"]
         self.type <- (map["type"],EnumTransform<TalkType>())
+        self.startTime <- (map["start_time"], DateFormatterTransform(dateFormatter: DateFormatterManager.sharedFormatter.dateFormatterWith_Hmm_Format()))
         self.tags <- map["tags"]
         self.duration <- map["duration"]
         self.speakerId <- map["speaker_id"]
