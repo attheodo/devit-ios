@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4D22AAAD1DC200C30020ABB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */; };
+		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
+		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
+		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
 		4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF433581DC1222000D7510A /* AppDelegate.swift */; };
 		4DF4335B1DC1222000D7510A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335A1DC1222000D7510A /* FirstViewController.swift */; };
 		4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335C1DC1222000D7510A /* SecondViewController.swift */; };
 		4DF433601DC1222000D7510A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4335E1DC1222000D7510A /* Main.storyboard */; };
 		4DF433621DC1222000D7510A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF433611DC1222000D7510A /* Assets.xcassets */; };
 		4DF433651DC1222000D7510A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF433631DC1222000D7510A /* LaunchScreen.storyboard */; };
+		4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD17FE1DC23254006DCB62 /* Attendee.swift */; };
+		4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18001DC246BA006DCB62 /* Colors.swift */; };
+		4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18031DC24A39006DCB62 /* CTAButton.swift */; };
+		4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */; };
 		780BFC794CB422D6C381D1F2 /* Pods_DEVit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C01FAA0CDB93BF586194229 /* Pods-DEVit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.debug.xcconfig"; sourceTree = "<group>"; };
 		4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Files/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
+		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		4DF433551DC1221F00D7510A /* DEVit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEVit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF433581DC1222000D7510A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF4335A1DC1222000D7510A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +38,10 @@
 		4DF433611DC1222000D7510A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DF433641DC1222000D7510A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DF433661DC1222000D7510A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DFD17FE1DC23254006DCB62 /* Attendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attendee.swift; path = Models/Attendee.swift; sourceTree = "<group>"; };
+		4DFD18001DC246BA006DCB62 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4DFD18031DC24A39006DCB62 /* CTAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CTAButton.swift; path = Subclasses/CTAButton.swift; sourceTree = "<group>"; };
+		4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomBorderTextField.swift; path = Subclasses/BottomBorderTextField.swift; sourceTree = "<group>"; };
 		7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DEVit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BB036CE4413D3C8B4AC0F7 /* Pods-DEVit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +71,7 @@
 			children = (
 				4DF4335A1DC1222000D7510A /* FirstViewController.swift */,
 				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
+				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -87,6 +102,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4D22AAB41DC22FBF0020ABB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DFD17FE1DC23254006DCB62 /* Attendee.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4DF4334C1DC1221F00D7510A = {
 			isa = PBXGroup;
 			children = (
@@ -109,12 +132,26 @@
 			isa = PBXGroup;
 			children = (
 				4DF433581DC1222000D7510A /* AppDelegate.swift */,
+				4D22AAB01DC20C630020ABB3 /* Constants.swift */,
+				4DFD18001DC246BA006DCB62 /* Colors.swift */,
+				4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */,
+				4DFD18021DC24A27006DCB62 /* Subclasses */,
+				4D22AAB41DC22FBF0020ABB3 /* Models */,
 				4D22AAA81DC1FF140020ABB3 /* View Controllers */,
 				4D22AAA91DC1FF1F0020ABB3 /* Storyboards */,
 				4D22AAAA1DC1FF2B0020ABB3 /* Assets */,
 				4D22AAAB1DC1FF300020ABB3 /* Supporting Files */,
 			);
 			path = DEVit;
+			sourceTree = "<group>";
+		};
+		4DFD18021DC24A27006DCB62 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				4DFD18031DC24A39006DCB62 /* CTAButton.swift */,
+				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 		53A1F607FA091BB0658D4C04 /* Pods */ = {
@@ -251,8 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
+				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
+				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
+				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
+				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
+				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
+				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
 				4DF4335B1DC1222000D7510A /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEWZXLUE96;
 				INFOPLIST_FILE = DEVit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devitconf.DEVit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -391,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEWZXLUE96;
 				INFOPLIST_FILE = DEVit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devitconf.DEVit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
