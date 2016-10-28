@@ -17,26 +17,32 @@ public class FirebaseManager {
     let rootDbRef = FIRDatabase.database().reference()
     let attendeesDbRef = FIRDatabase.database().reference(withPath: "attendees")
     let talksDbRef = FIRDatabase.database().reference(withPath: "talks")
+    let speakersDbRef = FIRDatabase.database().reference(withPath: "speakers")
     
     // MARK: - Singleton
     static let sharedInstance = FirebaseManager()
-    public init() {}
+    public init() {
+        _registerNotifications()
+    }
     
     // MARK: - Public Properties
     public var user:FIRUser? = nil
     public var talks:[Talk] = []
+    public var speakers:[Speaker] = []
     
     // MARK: - Private Properties
     private lazy var Defaults = {
         return UserDefaults.standard
     }()
+    
     private var talksObserverHandler: UInt = 0
+    private var speakersObserverHandler: UInt = 0
     
     private var attendees: [Attendee] = []
     
     public func getAttendeesEmails(withCompletionHandler handler: @escaping (_ attendees: [Attendee]?, _ error: Error? )-> Void) {
         
-        l.verbose("Downloading atteendees list")
+        l.verbose("Getting atteendees list")
         
         attendeesDbRef.observeSingleEvent(of: .value, with: { (snapshot) in
         
@@ -98,7 +104,9 @@ public class FirebaseManager {
         
     }
     
-    public func startObservingTalkSnapshots(withCompletionHandler handler: @escaping ()-> Void ) {
+    public func startObservingTalkSnapshots() {
+        
+        l.verbose("Start observing `talks` snapshots")
         
         talksObserverHandler = talksDbRef.observe(.value, with: { (snapshot) in
         
@@ -120,17 +128,75 @@ public class FirebaseManager {
             
             NotificationCenter.default.post(name: Constants.Notifications.talksSnapshotUpdated, object: nil)
             
-            handler()
         
         })
         
     }
     
-    public func stopObservingTalkSnapshots() {
+    public func stopObservingTalksSnapshots() {
         talksDbRef.removeObserver(withHandle: talksObserverHandler)
     }
     
+    public func startObservingSpeakerSnaphots() {
+       
+        l.verbose("Getting speakers list")
+        
+        speakersObserverHandler = speakersDbRef.observe(.value, with: { (snapshot) in
+            
+            guard let speakersJSON = snapshot.value as? NSDictionary else {
+                return
+            }
+            
+            self.speakers.removeAll()
+            
+            speakersJSON.forEach { speaker in
+                if let speaker = Mapper<Speaker>().map(JSONObject: speaker.value) {
+                    self.speakers.append(speaker)
+                }
+            }
+            
+            NotificationCenter.default.post(name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
+            
+        })
+        
+
+    }
     
+    // MARK: - Notifications
+    private func _registerNotifications() {
+        
+        let nc = NotificationCenter.default
+        
+        nc.addObserver(self, selector: #selector(self._createTalksSpeakersRelations), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._createTalksSpeakersRelations), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+    
+    }
+    
+    // MARK: Selectors
+    @objc private func _createTalksSpeakersRelations() {
+        
+        l.verbose("Associating talks with speakers")
+        
+        guard speakers.count > 0, talks.count > 0 else {
+            l.verbose("Speakers or talks is still empty")
+            return
+        }
+        
+        for talk in talks {
+            
+            guard let speakerId = talk.speakerId else {
+                continue
+            }
+            
+            if let speaker = speakers.filter({ $0.id == speakerId }).first {
+                talk.speaker = speaker
+            }
+       
+        }
+        
+        NotificationCenter.default.post(name: Constants.Notifications.speakersTalksRelatingFinished, object: nil)
+        
+    }
 
        
 }

@@ -51,9 +51,8 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         HUD.show(.progress)
         
-        ModelsManager.startObservingTalkSnapshots {
-            HUD.hide()
-        }
+        ModelsManager.startObservingTalkSnapshots()
+        ModelsManager.startObservingSpeakerSnaphots()
 
     }
     
@@ -103,12 +102,13 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func _registerNotifications() {
         
         let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(self._reloadTalksTableView), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._reloadTalksTableView), name: Constants.Notifications.speakersTalksRelatingFinished, object: nil)
     
     }
     
     // MARK: Notification Selectors
     @objc private func _reloadTalksTableView() {
+        HUD.hide()
         talksTableView.reloadData()
     }
 
