@@ -27,6 +27,7 @@
 		4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD180D1DC3A560006DCB62 /* DevitTalkTypeCell.swift */; };
 		4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18111DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift */; };
 		4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18131DC3B21C006DCB62 /* DateFormatterManager.swift */; };
+		4DFD18161DC3C1DF006DCB62 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18151DC3C1DF006DCB62 /* Speaker.swift */; };
 		780BFC794CB422D6C381D1F2 /* Pods_DEVit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		4DFD180D1DC3A560006DCB62 /* DevitTalkTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DevitTalkTypeCell.swift; path = "TableView Cells/DevitTalkTypeCell.swift"; sourceTree = "<group>"; };
 		4DFD18111DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerTalkTypeCell.swift; path = "TableView Cells/SpeakerTalkTypeCell.swift"; sourceTree = "<group>"; };
 		4DFD18131DC3B21C006DCB62 /* DateFormatterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatterManager.swift; path = Classes/Services/DateFormatterManager.swift; sourceTree = "<group>"; };
+		4DFD18151DC3C1DF006DCB62 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Speaker.swift; path = Models/Speaker.swift; sourceTree = "<group>"; };
 		7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DEVit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BB036CE4413D3C8B4AC0F7 /* Pods-DEVit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 			children = (
 				4DFD17FE1DC23254006DCB62 /* Attendee.swift */,
 				4DFD180B1DC3966E006DCB62 /* Talk.swift */,
+				4DFD18151DC3C1DF006DCB62 /* Speaker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFD18161DC3C1DF006DCB62 /* Speaker.swift in Sources */,
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
 				4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */,
