@@ -49,7 +49,7 @@ public class Talk: Mappable, CustomStringConvertible {
     
     public func mapping(map: Map) {
         
-        self.order <- map["id"]
+        self.id <- map["id"]
         self.order <- map["order"]
         self.name <- map["name"]
         self.type <- (map["type"],EnumTransform<TalkType>())
