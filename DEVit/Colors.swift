@@ -19,4 +19,5 @@ struct Colors {
     static let fadedWhite = UIColor(hexString: "#FFFFFF", alpha: 0.4)
     static let mediumBlue = UIColor(hexString: "#74ABCE")
     static let darkGray = UIColor(hexString: "#4D4E4D")
+    static let lightGray = UIColor(hexString: "#929496")
 }
