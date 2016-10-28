@@ -21,6 +21,9 @@ public class FirebaseManager {
     static let sharedInstance = FirebaseManager()
     public init() {}
     
+    // MARK: - Public Properties
+    public var user:FIRUser? = nil
+    
     // MARK: - Private Properties
     private lazy var Defaults = {
         return UserDefaults.standard
@@ -29,6 +32,8 @@ public class FirebaseManager {
     private var attendees: [Attendee] = []
     
     public func getAttendeesEmails(withCompletionHandler handler: @escaping (_ attendees: [Attendee]?, _ error: Error? )-> Void) {
+        
+        l.verbose("Downloading atteendees list")
         
         attendeesDbRef.observeSingleEvent(of: .value, with: { (snapshot) in
         
@@ -50,6 +55,8 @@ public class FirebaseManager {
     
     public func performLogin(withEmail email: String?, handler: @escaping (_ isLoggedIn: Bool) -> Void) {
         
+        l.verbose("Performing login")
+        
         getAttendeesEmails { attendees, error in
             
             guard let attendees = attendees,
@@ -63,8 +70,23 @@ public class FirebaseManager {
             
             let tmp = attendees.filter { $0.email! == currentEmail && $0.isLoggedIn == false }
             
+            // Atttendee e-mail found
             if tmp.count == 1 {
-                handler(true)
+                
+                // Sign-in anonymously just to have a token
+                FIRAuth.auth()?.signInAnonymously { (user, error) in
+                    
+                    l.verbose("Signing in anonymously with Firebase")
+                    
+                    if (error != nil) {
+                        handler(false)
+                    } else {
+                        self.user = user
+                        handler(true)
+                    }
+                
+                }
+                
             } else {
                 handler(false)
             }
@@ -72,6 +94,7 @@ public class FirebaseManager {
         }
         
     }
+    
     
 
        
