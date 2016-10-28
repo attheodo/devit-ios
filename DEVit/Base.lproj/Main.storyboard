@@ -90,9 +90,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-Qe-9BC">
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="S6n-Qe-9BC" firstAttribute="top" secondItem="aHY-rz-iFl" secondAttribute="bottom" constant="5" id="07k-Gk-aPb"/>
                                                 <constraint firstItem="aHY-rz-iFl" firstAttribute="leading" secondItem="dd1-gH-f2Z" secondAttribute="trailing" constant="50" id="VVp-hq-6MB"/>
+                                                <constraint firstItem="S6n-Qe-9BC" firstAttribute="leading" secondItem="aHY-rz-iFl" secondAttribute="leading" id="WHl-ZN-ZDY"/>
                                                 <constraint firstItem="aHY-rz-iFl" firstAttribute="centerY" secondItem="dd1-gH-f2Z" secondAttribute="centerY" id="bdO-Yd-kxe"/>
                                                 <constraint firstItem="dd1-gH-f2Z" firstAttribute="leading" secondItem="Hm9-vP-hxP" secondAttribute="leadingMargin" constant="5" id="qmp-ec-BgX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aHY-rz-iFl" secondAttribute="trailing" constant="10" id="tlj-8K-iyc"/>
@@ -100,6 +107,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="speakerNameLabel" destination="S6n-Qe-9BC" id="JkE-yU-Zmu"/>
                                             <outlet property="startingTimeLabel" destination="dd1-gH-f2Z" id="qHk-7u-DyC"/>
                                             <outlet property="titleLabel" destination="aHY-rz-iFl" id="KRb-fK-bLW"/>
                                         </connections>
