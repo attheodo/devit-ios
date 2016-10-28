@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PagingMenuController
 
 class FirstViewController: UIViewController {
 
