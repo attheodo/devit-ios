@@ -9,4 +9,5 @@ target 'DEVit' do
   pod 'SwiftHEXColors', :git => "git@github.com:thii/SwiftHEXColors.git", :branch => "swift-3.0"
   pod 'PKHUD', '~> 4.0'
   pod 'XCGLogger'
+  pod 'PagingMenuController'
 end
