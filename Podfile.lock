@@ -30,11 +30,31 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - ObjectMapper (2.1.0)
+  - PKHUD (4.0.0)
+  - SwiftHEXColors (1.0.4)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - ObjectMapper
+  - PKHUD (~> 4.0)
+  - SwiftHEXColors (from `git@github.com:thii/SwiftHEXColors.git`, branch `swift-3.0`)
+  - XCGLogger
+
+EXTERNAL SOURCES:
+  SwiftHEXColors:
+    :branch: swift-3.0
+    :git: git@github.com:thii/SwiftHEXColors.git
+
+CHECKOUT OPTIONS:
+  SwiftHEXColors:
+    :commit: f4b98e298528fd9d88b10ab55e806d29ce497daa
+    :git: git@github.com:thii/SwiftHEXColors.git
 
 SPEC CHECKSUMS:
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -47,7 +67,11 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
+  SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: fb0dffc89050add1417101b41ed6c91d8c6f2043
+PODFILE CHECKSUM: 13ad477709aaf5f154af15a04a53772703b90977
 
 COCOAPODS: 1.1.0.rc.3
