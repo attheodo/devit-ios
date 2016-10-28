@@ -21,6 +21,8 @@
 		4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18001DC246BA006DCB62 /* Colors.swift */; };
 		4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18031DC24A39006DCB62 /* CTAButton.swift */; };
 		4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */; };
+		4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18071DC3794D006DCB62 /* TalksViewController.swift */; };
+		4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */; };
 		780BFC794CB422D6C381D1F2 /* Pods_DEVit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		4DFD18001DC246BA006DCB62 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4DFD18031DC24A39006DCB62 /* CTAButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CTAButton.swift; path = Subclasses/CTAButton.swift; sourceTree = "<group>"; };
 		4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomBorderTextField.swift; path = Subclasses/BottomBorderTextField.swift; sourceTree = "<group>"; };
+		4DFD18071DC3794D006DCB62 /* TalksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalksViewController.swift; path = "View Controllers/TalksViewController.swift"; sourceTree = "<group>"; };
+		4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkshopsViewController.swift; path = "View Controllers/WorkshopsViewController.swift"; sourceTree = "<group>"; };
 		7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DEVit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BB036CE4413D3C8B4AC0F7 /* Pods-DEVit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,8 @@
 				4DF4335A1DC1222000D7510A /* SessionsViewController.swift */,
 				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
 				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
+				4DFD18071DC3794D006DCB62 /* TalksViewController.swift */,
+				4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -291,11 +297,13 @@
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
 				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
+				4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
+				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
 				4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */,
 			);
