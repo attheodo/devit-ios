@@ -36,6 +36,8 @@ public class Talk: Mappable, CustomStringConvertible {
     var duration: Int? = nil
     /// The `id` of the speaker as declared in Firebase
     var speakerId: String? = nil
+    
+    var speaker: Speaker? = nil
 
     public var description: String {
         return name!
