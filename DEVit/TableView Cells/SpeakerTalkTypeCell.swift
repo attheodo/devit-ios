@@ -38,13 +38,17 @@ class SpeakerTalkTypeCell: UITableViewCell {
         backgroundColor = Colors.lightBlue!
         titleLabel.textColor = Colors.darkBlue!
         startingTimeLabel.textColor = Colors.darkGray!
+        speakerNameLabel.textColor = Colors.lightGray!
         
         accessoryType = .disclosureIndicator
         
     }
     
     private func _setupCell() {
+        
         titleLabel.text = talk!.name!
         startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: talk!.startTime!)
+        speakerNameLabel.text = talk!.speaker!.name
+        
     }
 }
