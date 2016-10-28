@@ -23,6 +23,10 @@
 		4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */; };
 		4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18071DC3794D006DCB62 /* TalksViewController.swift */; };
 		4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */; };
+		4DFD180C1DC3966E006DCB62 /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD180B1DC3966E006DCB62 /* Talk.swift */; };
+		4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD180D1DC3A560006DCB62 /* DevitTalkTypeCell.swift */; };
+		4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18111DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift */; };
+		4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD18131DC3B21C006DCB62 /* DateFormatterManager.swift */; };
 		780BFC794CB422D6C381D1F2 /* Pods_DEVit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,10 @@
 		4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomBorderTextField.swift; path = Subclasses/BottomBorderTextField.swift; sourceTree = "<group>"; };
 		4DFD18071DC3794D006DCB62 /* TalksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalksViewController.swift; path = "View Controllers/TalksViewController.swift"; sourceTree = "<group>"; };
 		4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkshopsViewController.swift; path = "View Controllers/WorkshopsViewController.swift"; sourceTree = "<group>"; };
+		4DFD180B1DC3966E006DCB62 /* Talk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Talk.swift; path = Models/Talk.swift; sourceTree = "<group>"; };
+		4DFD180D1DC3A560006DCB62 /* DevitTalkTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DevitTalkTypeCell.swift; path = "TableView Cells/DevitTalkTypeCell.swift"; sourceTree = "<group>"; };
+		4DFD18111DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerTalkTypeCell.swift; path = "TableView Cells/SpeakerTalkTypeCell.swift"; sourceTree = "<group>"; };
+		4DFD18131DC3B21C006DCB62 /* DateFormatterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatterManager.swift; path = Classes/Services/DateFormatterManager.swift; sourceTree = "<group>"; };
 		7D1CF0061B0EB6C456718AAA /* Pods_DEVit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DEVit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BB036CE4413D3C8B4AC0F7 /* Pods-DEVit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +84,7 @@
 				4DF4335A1DC1222000D7510A /* SessionsViewController.swift */,
 				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
 				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
-				4DFD18071DC3794D006DCB62 /* TalksViewController.swift */,
+				4DFD180F1DC3A681006DCB62 /* TalksViewController */,
 				4DFD18091DC3795B006DCB62 /* WorkshopsViewController.swift */,
 			);
 			name = "View Controllers";
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFD17FE1DC23254006DCB62 /* Attendee.swift */,
+				4DFD180B1DC3966E006DCB62 /* Talk.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -141,6 +150,7 @@
 				4D22AAB01DC20C630020ABB3 /* Constants.swift */,
 				4DFD18001DC246BA006DCB62 /* Colors.swift */,
 				4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */,
+				4DFD18131DC3B21C006DCB62 /* DateFormatterManager.swift */,
 				4DFD18021DC24A27006DCB62 /* Subclasses */,
 				4D22AAB41DC22FBF0020ABB3 /* Models */,
 				4D22AAA81DC1FF140020ABB3 /* View Controllers */,
@@ -158,6 +168,24 @@
 				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
 			);
 			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		4DFD180F1DC3A681006DCB62 /* TalksViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4DFD18071DC3794D006DCB62 /* TalksViewController.swift */,
+				4DFD18101DC3A68A006DCB62 /* TableView Cells */,
+			);
+			name = TalksViewController;
+			sourceTree = "<group>";
+		};
+		4DFD18101DC3A68A006DCB62 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4DFD180D1DC3A560006DCB62 /* DevitTalkTypeCell.swift */,
+				4DFD18111DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift */,
+			);
+			name = "TableView Cells";
 			sourceTree = "<group>";
 		};
 		53A1F607FA091BB0658D4C04 /* Pods */ = {
@@ -296,10 +324,14 @@
 			files = (
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
+				4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */,
 				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
 				4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */,
+				4DFD180C1DC3966E006DCB62 /* Talk.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
+				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
+				4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */,
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
