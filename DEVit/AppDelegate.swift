@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        l.setup(level: .debug, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
+        l.setup(level: .verbose, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
         
         FIRApp.configure()
         
