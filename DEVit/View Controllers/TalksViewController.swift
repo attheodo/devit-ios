@@ -28,5 +28,6 @@ class TalksViewController: UIViewController {
     // MARK: - Private Methods
     private func _configureView() {
         title = "Talks"
+        view.backgroundColor = Colors.lightBlue
     }
 }

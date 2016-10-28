@@ -27,6 +27,7 @@ class WorkshopsViewController: UIViewController {
     // MARK: - Private Methods
     private func _configureView() {
         title = "Workshops"
+        view.backgroundColor = Colors.lightBlue
     }
 
 }
