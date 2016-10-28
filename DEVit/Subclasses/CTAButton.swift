@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
+class CTAButton: UIButton {
+    override func awakeFromNib() {
+        _configure()
+    }
+    
+    // MARK: - Private Methods
+    private func _configure() {
+        
+        backgroundColor = Colors.darkBlue
+        layer.cornerRadius = 3.0
+        setTitleColor(UIColor.white, for: .normal)
+    
+    }
+}
