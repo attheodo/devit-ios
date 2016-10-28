@@ -43,17 +43,22 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - ObjectMapper
-  - PageMenu
+  - PageMenu (from `git@github.com:orazz/PageMenu.git`)
   - PKHUD (~> 4.0)
   - SwiftHEXColors (from `git@github.com:thii/SwiftHEXColors.git`, branch `swift-3.0`)
   - XCGLogger
 
 EXTERNAL SOURCES:
+  PageMenu:
+    :git: git@github.com:orazz/PageMenu.git
   SwiftHEXColors:
     :branch: swift-3.0
     :git: git@github.com:thii/SwiftHEXColors.git
 
 CHECKOUT OPTIONS:
+  PageMenu:
+    :commit: 1575c91cf9276bf0d356ce97454c5899ec6fdf32
+    :git: git@github.com:orazz/PageMenu.git
   SwiftHEXColors:
     :commit: f4b98e298528fd9d88b10ab55e806d29ce497daa
     :git: git@github.com:thii/SwiftHEXColors.git
@@ -75,6 +80,6 @@ SPEC CHECKSUMS:
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 9ec8cff611a75f906ead73b7b89bb4df812d292f
+PODFILE CHECKSUM: 49520c1557ec2737bdb981dee5a5eae849560552
 
 COCOAPODS: 1.1.0.rc.3
