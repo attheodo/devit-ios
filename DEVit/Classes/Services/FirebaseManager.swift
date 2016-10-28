@@ -16,6 +16,7 @@ public class FirebaseManager {
     
     let rootDbRef = FIRDatabase.database().reference()
     let attendeesDbRef = FIRDatabase.database().reference(withPath: "attendees")
+    let talksDbRef = FIRDatabase.database().reference(withPath: "talks")
     
     // MARK: - Singleton
     static let sharedInstance = FirebaseManager()
@@ -23,11 +24,13 @@ public class FirebaseManager {
     
     // MARK: - Public Properties
     public var user:FIRUser? = nil
+    public var talks:[Talk] = []
     
     // MARK: - Private Properties
     private lazy var Defaults = {
         return UserDefaults.standard
     }()
+    private var talksObserverHandler: UInt = 0
     
     private var attendees: [Attendee] = []
     
@@ -93,6 +96,39 @@ public class FirebaseManager {
             
         }
         
+    }
+    
+    public func startObservingTalkSnapshots(withCompletionHandler handler: @escaping ()-> Void ) {
+        
+        talksObserverHandler = talksDbRef.observe(.value, with: { (snapshot) in
+        
+            guard let talksJSON = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            self.talks.removeAll()
+            
+            talksJSON.forEach { talk in
+        
+                if let talk = Mapper<Talk>().map(JSONObject: talk.value) {
+                    self.talks.append(talk)
+                }
+
+            }
+            
+            self.talks.sort { $0.order! < $1.order! }
+            
+            NotificationCenter.default.post(name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+            
+            
+            handler()
+        
+        })
+        
+    }
+    
+    public func stopObservingTalkSnapshots() {
+        talksDbRef.removeObserver(withHandle: talksObserverHandler)
     }
     
     
