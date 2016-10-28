@@ -120,7 +120,6 @@ public class FirebaseManager {
             
             NotificationCenter.default.post(name: Constants.Notifications.talksSnapshotUpdated, object: nil)
             
-            
             handler()
         
         })
