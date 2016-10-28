@@ -31,7 +31,7 @@ PODS:
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
   - ObjectMapper (2.1.0)
-  - PagingMenuController (2.0.0)
+  - PageMenu (1.2.9)
   - PKHUD (4.0.0)
   - SwiftHEXColors (1.0.4)
   - XCGLogger (4.0.0):
@@ -43,7 +43,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - ObjectMapper
-  - PagingMenuController
+  - PageMenu
   - PKHUD (~> 4.0)
   - SwiftHEXColors (from `git@github.com:thii/SwiftHEXColors.git`, branch `swift-3.0`)
   - XCGLogger
@@ -70,11 +70,11 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
-  PagingMenuController: 60602bfb5421d6536c1e3097baeed601dec1d85b
+  PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: c733798b9e10553686169f0fafd2e0ce79b40271
+PODFILE CHECKSUM: 9ec8cff611a75f906ead73b7b89bb4df812d292f
 
 COCOAPODS: 1.1.0.rc.3
