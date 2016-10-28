@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -46,7 +48,7 @@
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -81,6 +83,89 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="DcQ-su-cHs">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="HGQ-OT-xbv" customClass="LoginViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gNO-Ia-sew"/>
+                        <viewControllerLayoutGuide type="bottom" id="9bs-fA-58C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zxE-Rr-yEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your e-mail address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSu-08-Obu" customClass="BottomBorderTextField" customModule="DEVit" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="PPV-LH-eFD"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fS-l7-Hd3" customClass="CTAButton" customModule="DEVit" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.38823529411764707" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="2V3-TQ-nSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="performLogin" destination="HGQ-OT-xbv" eventType="touchUpInside" id="jpG-b1-ZRS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-big" translatesAutoresizingMaskIntoConstraints="NO" id="syc-o4-S2n">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="bxr-OC-4dx"/>
+                                    <constraint firstAttribute="width" constant="165" id="lsf-ms-gF9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ubV-BK-Xd4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="GnJ-CO-lj4"/>
+                                    <constraint firstAttribute="width" constant="24" id="fJU-YC-qmY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-NE-7gc">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <state key="normal" title="Why do you ask for my email?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.24705882352941178" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rBq-NE-7gc" firstAttribute="leading" secondItem="zxE-Rr-yEt" secondAttribute="leadingMargin" constant="15" id="1o6-fd-VRk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xSu-08-Obu" secondAttribute="trailing" constant="15" id="Iss-ab-PPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rBq-NE-7gc" secondAttribute="trailing" constant="15" id="PNt-tB-s0l"/>
+                            <constraint firstItem="5fS-l7-Hd3" firstAttribute="top" secondItem="xSu-08-Obu" secondAttribute="bottom" constant="20" id="SaB-xH-ZvN"/>
+                            <constraint firstItem="syc-o4-S2n" firstAttribute="top" secondItem="gNO-Ia-sew" secondAttribute="bottom" constant="56" id="UkN-KL-OJh"/>
+                            <constraint firstItem="9bs-fA-58C" firstAttribute="top" secondItem="rBq-NE-7gc" secondAttribute="bottom" constant="20" id="Wtg-9x-kN0"/>
+                            <constraint firstItem="xSu-08-Obu" firstAttribute="leading" secondItem="zxE-Rr-yEt" secondAttribute="leadingMargin" constant="15" id="aiq-7X-YQ0"/>
+                            <constraint firstItem="5fS-l7-Hd3" firstAttribute="leading" secondItem="xSu-08-Obu" secondAttribute="leading" id="e3h-nf-7uD"/>
+                            <constraint firstItem="5fS-l7-Hd3" firstAttribute="trailing" secondItem="xSu-08-Obu" secondAttribute="trailing" id="g8W-SL-H0V"/>
+                            <constraint firstItem="syc-o4-S2n" firstAttribute="centerX" secondItem="zxE-Rr-yEt" secondAttribute="centerX" id="kHC-f3-E2b"/>
+                            <constraint firstItem="ubV-BK-Xd4" firstAttribute="leading" secondItem="xSu-08-Obu" secondAttribute="leading" id="lED-2b-CPM"/>
+                            <constraint firstItem="ubV-BK-Xd4" firstAttribute="centerY" secondItem="xSu-08-Obu" secondAttribute="centerY" id="vel-pQ-hMY"/>
+                            <constraint firstItem="xSu-08-Obu" firstAttribute="top" secondItem="syc-o4-S2n" secondAttribute="bottom" constant="80" id="w7W-hr-g2P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="xSu-08-Obu" id="Uo5-yK-4CI"/>
+                        <outlet property="submitButton" destination="5fS-l7-Hd3" id="hhB-KQ-mQo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAA-p2-yoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1384.8" y="244.22788605697153"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -102,7 +187,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="email-icon" width="24" height="18"/>
         <image name="first" width="30" height="30"/>
+        <image name="logo-big" width="309" height="118"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
