@@ -14,15 +14,12 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var firebaseService: FirebaseService!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
         FIRApp.configure()
-        firebaseService = FirebaseService()
         
         loadStoryboard()
         
@@ -52,25 +49,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    /// Loads appripriate Storyboard according to whether the user is currently logged-in
     private func loadStoryboard() {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        if firebaseService.isLoggedIn() {
-        
-            let rootVC = storyboard.instantiateInitialViewController()
-            window!.rootViewController = rootVC
-            window!.makeKeyAndVisible()
-        
+        // If not email is saved in defaults, go straight to login
+        if UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail) == nil {
+            loadLoginScene()
+            return
         } else {
-           
-            let rootVC = storyboard.instantiateViewController(withIdentifier: MainStoryboard.loginScene.rawValue)
-            window!.rootViewController = rootVC
-            window!.makeKeyAndVisible()
-        
+            loadMainScene()
         }
+        
+        FirebaseManager.sharedInstance.performLogin(withEmail: UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail)) { isLoggedIn in
+            if !isLoggedIn {
+                self.loadLoginScene()
+            }
 
+        }
+        
     }
+    
+    /// Loads main Storyboard
+    public func loadMainScene() {
+
+        let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: Bundle.main)
+
+        let rootVC = storyboard.instantiateInitialViewController()
+        window!.rootViewController = rootVC
+        window!.makeKeyAndVisible()
+    
+    }
+    
+    /// Loads `LoginViewController` scene
+    public func loadLoginScene() {
+        
+        let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: Bundle.main)
+
+        let rootVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.Scenes.mainStoryboardLoginViewControllerScene)
+        self.window!.rootViewController = rootVC
+        self.window!.makeKeyAndVisible()
+        
+    }
+
 
 }
 
