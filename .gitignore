@@ -63,3 +63,5 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+DEVit/Supporting Files/GoogleService-Info.plist
