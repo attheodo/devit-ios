@@ -36,4 +36,9 @@ struct Constants {
     
     }
     
+    struct Notifications {
+        
+        /// Posted when a new talks snapshot is fetched from Firebase
+        static let talksSnapshotUpdated = Notification.Name("kDEVitNotificationsTalksSnapshotUpdated")
+    }
 }
