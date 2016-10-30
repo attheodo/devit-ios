@@ -43,8 +43,11 @@ class DevitTalkTypeCell: UITableViewCell {
     private func _setupCell() {
         
         titleLabel.text = talk!.name!
-        startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: talk!.startTime!)
-    
+        
+        if let startTime = talk!.startTime {
+            startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: startTime)
+        }
+        
         switch talk!.name! {
             case "Registration":
                 sessionTypeImageView.image = UIImage(named: "registration-icon")
