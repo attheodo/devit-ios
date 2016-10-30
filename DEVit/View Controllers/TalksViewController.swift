@@ -102,7 +102,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func _registerNotifications() {
         
         let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(self._reloadTalksTableView), name: Constants.Notifications.speakersTalksRelatingFinished, object: nil)
+        nc.addObserver(self, selector: #selector(self._reloadTalksTableView), name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
     
     }
     

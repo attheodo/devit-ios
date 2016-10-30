@@ -167,13 +167,13 @@ public class FirebaseManager {
         
         let nc = NotificationCenter.default
         
-        nc.addObserver(self, selector: #selector(self._createTalksSpeakersRelations), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
-        nc.addObserver(self, selector: #selector(self._createTalksSpeakersRelations), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
     
     }
     
     // MARK: Selectors
-    @objc private func _createTalksSpeakersRelations() {
+    @objc private func _associateTalksWithSpeakers() {
         
         l.verbose("Associating talks with speakers")
         
@@ -194,7 +194,7 @@ public class FirebaseManager {
        
         }
         
-        NotificationCenter.default.post(name: Constants.Notifications.speakersTalksRelatingFinished, object: nil)
+        NotificationCenter.default.post(name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
         
     }
 
