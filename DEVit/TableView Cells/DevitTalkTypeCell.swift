@@ -60,6 +60,7 @@ class DevitTalkTypeCell: UITableViewCell {
             default:
                 sessionTypeImageView.image = nil
         }
+        
     }
 
 }
