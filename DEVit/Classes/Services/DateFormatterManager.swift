@@ -40,10 +40,13 @@ public class DateFormatterManager {
         
     }
     
-    public func dateFormatterWith_Hmm_Format() -> DateFormatter {
-        dateFormatter.dateFormat = "H:mm"
+    public func dateFormatterForISO8601Date() -> DateFormatter {
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         dateFormatter.timeZone = NSTimeZone.local
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale!
         return dateFormatter
+    
     }
     
 }
