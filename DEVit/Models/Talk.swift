@@ -53,7 +53,7 @@ public class Talk: Mappable, CustomStringConvertible {
         self.order <- map["order"]
         self.name <- map["name"]
         self.type <- (map["type"],EnumTransform<TalkType>())
-        self.startTime <- (map["start_time"], DateFormatterTransform(dateFormatter: DateFormatterManager.sharedFormatter.dateFormatterWith_Hmm_Format()))
+        self.startTime <- (map["start_time"], DateFormatterTransform(dateFormatter: DateFormatterManager.sharedFormatter.dateFormatterForISO8601Date()))
         self.tags <- map["tags"]
         self.duration <- map["duration"]
         self.speakerId <- map["speaker_id"]
