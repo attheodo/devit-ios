@@ -50,7 +50,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
         titleLabel.text = talk!.name!
         startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: talk!.startTime!)
         speakerNameLabel.text = talk!.speaker!.name
-        durationLabel.text = String(talk!.duration!)
+        durationLabel.text = "\(talk!.duration!) m"
         
     }
 }
