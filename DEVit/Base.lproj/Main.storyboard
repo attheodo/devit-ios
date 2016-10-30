@@ -46,7 +46,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjc-m2-Fbr" id="mmf-Lh-J0X">
-                                            <frame key="frameInset" width="375" height="60"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ8-bI-RX1">
@@ -59,15 +59,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-br-06S">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="8X7-Sz-ijq"/>
+                                                        <constraint firstAttribute="height" constant="15" id="Vje-gD-hf3"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jQ8-bI-RX1" firstAttribute="leading" secondItem="mmf-Lh-J0X" secondAttribute="leadingMargin" constant="5" id="DCn-Di-9H5"/>
+                                                <constraint firstItem="T0F-br-06S" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="NTp-bI-q3u"/>
                                                 <constraint firstItem="jQ8-bI-RX1" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="OLL-pb-rZ1"/>
                                                 <constraint firstItem="yul-bn-fpm" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="jUX-K3-twm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="T0F-br-06S" secondAttribute="trailing" constant="5" id="jg4-Y0-u5B"/>
                                                 <constraint firstItem="yul-bn-fpm" firstAttribute="leading" secondItem="jQ8-bI-RX1" secondAttribute="trailing" constant="50" id="pv5-6x-a7Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="sessionTypeImageView" destination="T0F-br-06S" id="sUZ-9I-iFG"/>
                                             <outlet property="startingTimeLabel" destination="jQ8-bI-RX1" id="wSZ-Ac-Bie"/>
                                             <outlet property="titleLabel" destination="yul-bn-fpm" id="j2l-sZ-fPB"/>
                                         </connections>

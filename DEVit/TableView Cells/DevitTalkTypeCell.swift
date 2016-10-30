@@ -13,6 +13,7 @@ class DevitTalkTypeCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startingTimeLabel: UILabel!
+    @IBOutlet weak var sessionTypeImageView: UIImageView!
     
     // MARK: - Private Properties
     private lazy var DateManager = {
@@ -40,8 +41,22 @@ class DevitTalkTypeCell: UITableViewCell {
     }
     
     private func _setupCell() {
+        
         titleLabel.text = talk!.name!
         startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: talk!.startTime!)
+    
+        switch talk!.name! {
+            case "Registration":
+                sessionTypeImageView.image = UIImage(named: "registration-icon")
+            case "Opening Ceremony", "Closing Ceremony":
+                sessionTypeImageView.image = UIImage(named: "ceremony-icon")
+            case "Coffee Break":
+                sessionTypeImageView.image = UIImage(named: "coffee-break-icon")
+            case "Lunch Break":
+                sessionTypeImageView.image = UIImage(named: "lunch-break-icon")
+            default:
+                sessionTypeImageView.image = nil
+        }
     }
 
 }
