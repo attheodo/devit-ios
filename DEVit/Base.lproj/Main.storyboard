@@ -121,6 +121,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="durationLabel" destination="DxH-bH-HYb" id="Pw2-Od-Z2D"/>
                                             <outlet property="speakerNameLabel" destination="S6n-Qe-9BC" id="JkE-yU-Zmu"/>
                                             <outlet property="startingTimeLabel" destination="dd1-gH-f2Z" id="qHk-7u-DyC"/>
                                             <outlet property="titleLabel" destination="aHY-rz-iFl" id="KRb-fK-bLW"/>
