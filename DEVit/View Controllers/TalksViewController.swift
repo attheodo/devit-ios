@@ -93,7 +93,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if talks[indexPath.row].type! == .devit {
             return 60.0
         } else {
-            return 100.0
+            return 110.0
         }
         
     }
