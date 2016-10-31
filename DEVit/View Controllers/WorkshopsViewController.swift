@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class WorkshopsViewController: UIViewController {
+import PKHUD
+
+class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - IBOutlets
     @IBOutlet weak var workshopTypeSegmentedControl: UISegmentedControl!
@@ -23,9 +25,18 @@ class WorkshopsViewController: UIViewController {
     
     }
     
+    // MARL: - Private Properties
+    private var _workshops:[Workshop] = []
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        _registerNotifications()
         _configureView()
+        
+        HUD.show(.progress)
+        
     }
     
     // MARK: - Private Methods
@@ -37,5 +48,31 @@ class WorkshopsViewController: UIViewController {
         workshopTypeSegmentedControl.tintColor = Colors.darkBlue
     
     }
+    
+    // MARK: - UITableView Delegate/Datasource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return _workshops.count
+    }
+    
+    // MARK: - Notifications
+    private func _registerNotifications() {
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(self._reloadWorkshopsTableView), name: Constants.Notifications.speakersWorkshopsAssociationFinished, object: nil)
+        
+    }
+    
+    // MARK: Notification Selectors
+    @objc private func _reloadWorkshopsTableView() {
+        
+        HUD.hide()
+        workshopsTableView.reloadData()
+    
+    }
+
 
 }
