@@ -25,6 +25,9 @@ struct Constants {
             
             /// `WorkshopsViewController` scene storyboard id
             static let mainStoryboardWorkshopsViewControllerScene = "WorkshopsViewController"
+            
+            /// `SessionViewController` scene storyboard id
+            static let mainStoryboardSessionsviewControllerScene = "SessionsViewController"
         }
 
     }
