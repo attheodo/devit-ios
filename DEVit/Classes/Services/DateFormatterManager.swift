@@ -33,7 +33,7 @@ public class DateFormatterManager {
      - parameter date: A `NSDate` object holding the date to format
      - returns: The passed date formatted accordingly as a string
      */
-    public func dateWith_Hmm_formatAsStringFromDate(date: Date) -> String {
+    public func dateWith_Hmm_formatAsString(fromDate date: Date) -> String {
         
         dateFormatter.dateFormat = "H:mm"
         return dateFormatter.string(from: date as Date)

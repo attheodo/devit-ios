@@ -48,7 +48,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
     private func _setupCell() {
         
         titleLabel.text = talk!.name!
-        startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: talk!.startTime!)
+        startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: talk!.startTime!)
         speakerNameLabel.text = talk!.speaker!.name
         durationLabel.text = "\(talk!.duration!) m"
         

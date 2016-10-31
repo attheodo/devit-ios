@@ -45,7 +45,7 @@ class DevitTalkTypeCell: UITableViewCell {
         titleLabel.text = talk!.name!
         
         if let startTime = talk!.startTime {
-            startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsStringFromDate(date: startTime)
+            startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
         }
         
         switch talk!.name! {
