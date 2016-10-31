@@ -41,7 +41,7 @@ public class Workshop: Mappable, CustomStringConvertible {
         self.order <- map["order"]
         self.name <- map["name"]
         self.speakerId <- map["speaker_id"]
-        self.name <- map["is_all_day"]
+        self.isAllDay <- map["is_all_day"]
         self.location <- map["location"]
         
     }
