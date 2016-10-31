@@ -40,11 +40,21 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         _registerNotifications()
         _configureView()
         
-        HUD.show(.progress)
+        _loadTalks()
     
     }
     
     // MARK: - Private Methods
+    private func _loadTalks() {
+        
+        HUD.show(.progress)
+        
+        ModelsManager.startObservingTalkSnapshots()
+        ModelsManager.startObservingSpeakerSnaphots()
+    
+    }
+    
+    
     private func _configureView() {
         title = "Talks"
         
