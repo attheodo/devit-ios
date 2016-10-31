@@ -18,6 +18,7 @@ public class FirebaseManager {
     let attendeesDbRef = FIRDatabase.database().reference(withPath: "attendees")
     let talksDbRef = FIRDatabase.database().reference(withPath: "talks")
     let speakersDbRef = FIRDatabase.database().reference(withPath: "speakers")
+    let workshopsDbRef = FIRDatabase.database().reference(withPath: "workshops")
     
     // MARK: - Singleton
     static let sharedInstance = FirebaseManager()
@@ -29,6 +30,7 @@ public class FirebaseManager {
     public var user:FIRUser? = nil
     public var talks:[Talk] = []
     public var speakers:[Speaker] = []
+    public var workshops:[Workshop] = []
     
     // MARK: - Private Properties
     private lazy var Defaults = {
@@ -37,6 +39,7 @@ public class FirebaseManager {
     
     private var talksObserverHandler: UInt = 0
     private var speakersObserverHandler: UInt = 0
+    private var workshopsObserverHandler: UInt = 0
     
     private var attendees: [Attendee] = []
     
@@ -161,6 +164,37 @@ public class FirebaseManager {
         
     }
     
+    public func stopObservingSpeakersSnapshots() {
+        speakersDbRef.removeObserver(withHandle: speakersObserverHandler)
+    }
+    
+    public func startObservingWorkshopSnapshots() {
+        
+        l.verbose("Getting workshops")
+        
+        workshopsObserverHandler = workshopsDbRef.observe(.value, with: { (snapshot) in
+            
+            guard let workshopsJSON = snapshot.value as? NSDictionary else {
+                return
+            }
+            
+            workshopsJSON.forEach { workshop in
+            
+                if let workshop = Mapper<Workshop>().map(JSONObject: workshop.value) {
+                    self.workshops.append(workshop)
+                }
+            }
+            
+            NotificationCenter.default.post(name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
+            
+        })
+        
+    }
+    
+    public func stopObservingWorkshopSnapshots() {
+        workshopsDbRef.removeObserver(withHandle: workshopsObserverHandler)
+    }
+    
     // MARK: - Notifications
     private func _registerNotifications() {
         
@@ -168,6 +202,8 @@ public class FirebaseManager {
         
         nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
         nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._associateWorkshopsWithSpeakers), name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
+        nc.addObserver(self, selector: #selector(self._associateWorkshopsWithSpeakers), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
     
     }
     
@@ -194,6 +230,30 @@ public class FirebaseManager {
         }
         
         NotificationCenter.default.post(name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
+        
+    }
+    
+    @objc private func _associateWorkshopsWithSpeakers() {
+        
+        l.verbose("Associating workshops with speakers")
+        
+        guard speakers.count > 0, workshops.count > 0 else {
+            l.verbose("Speakers or workshops still empty")
+            return
+        }
+        
+        for workshop in workshops {
+            
+            guard let speakerId = workshop.speakerId else {
+                continue
+            }
+            
+            if let speaker = speakers.filter ( { $0.id == speakerId }).first {
+                workshop.speaker = speaker
+            }
+        }
+        
+        NotificationCenter.default.post(name: Constants.Notifications.speakersWorkshopsAssociationFinished, object: nil)
         
     }
 
