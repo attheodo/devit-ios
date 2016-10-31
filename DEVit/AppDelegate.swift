@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         l.setup(level: .verbose, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
         
         FIRApp.configure()
+        FIRDatabase.database().persistenceEnabled = true
         
         loadStoryboard()
         
@@ -63,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         } else {
             loadMainScene()
-            setupFirebaseModelObservers()
         }
         
         FirebaseManager.sharedInstance.performLogin(withEmail: UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail)) { isLoggedIn in
@@ -96,17 +96,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.makeKeyAndVisible()
         
     }
-    
-    public func setupFirebaseModelObservers() {
-        
-        let ModelsManager = FirebaseManager.sharedInstance
-        
-        ModelsManager.startObservingTalkSnapshots()
-        ModelsManager.startObservingSpeakerSnaphots()
-        ModelsManager.stopObservingWorkshopSnapshots()
-        
-    }
-
 
 }
 
