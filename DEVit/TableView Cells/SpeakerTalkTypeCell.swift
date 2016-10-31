@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SpeakerTalkTypeCell: UITableViewCell {
+class SpeakerTalkTypeCell: GenericSessionCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startingTimeLabel: UILabel!
@@ -22,7 +22,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
     }()
     
     // MARK: - Public Properties
-    public var talk: Talk? = nil {
+    override public var talk: Talk?  {
         didSet {
             _setupCell()
         }
@@ -33,9 +33,8 @@ class SpeakerTalkTypeCell: UITableViewCell {
     }
     
     // MARK: - Private Methods
-    private func _configureCell() {
+    internal override func _configureCell() {
         
-        backgroundColor = Colors.lightBlue!
         titleLabel.textColor = Colors.darkBlue!
         startingTimeLabel.textColor = Colors.darkGray!
         speakerNameLabel.textColor = Colors.lightGray!
@@ -51,6 +50,8 @@ class SpeakerTalkTypeCell: UITableViewCell {
         startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: talk!.startTime!)
         speakerNameLabel.text = talk!.speaker!.name
         durationLabel.text = "\(talk!.duration!) m"
+        
+        print(DateManager.isCurrentTimeWithinTimeRange(startingTime: talk!.startTime!, duration: talk!.duration!))
         
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DevitTalkTypeCell: UITableViewCell {
+class DevitTalkTypeCell: GenericSessionCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startingTimeLabel: UILabel!
@@ -21,18 +21,18 @@ class DevitTalkTypeCell: UITableViewCell {
     }()
     
     // MARK: - Public Properties
-    public var talk: Talk? = nil {
+    override public var talk: Talk?  {
         didSet {
             _setupCell()
         }
     }
-    
+
     override func awakeFromNib() {
         _configureCell()
     }
     
     // MARK: - Private Methods
-    private func _configureCell() {
+    internal override func _configureCell() {
         
         backgroundColor = Colors.lightBlue!
         titleLabel.textColor = Colors.mediumBlue!
