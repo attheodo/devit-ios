@@ -39,7 +39,8 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         _registerNotifications()
         _configureView()
-        _loadTalksData()
+        
+        HUD.show(.progress)
     
     }
     
@@ -49,15 +50,6 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.backgroundColor = Colors.lightBlue
         talksTableView.backgroundColor = UIColor.clear
-    }
-    
-    private func _loadTalksData() {
-
-        HUD.show(.progress)
-        
-        ModelsManager.startObservingTalkSnapshots()
-        ModelsManager.startObservingSpeakerSnaphots()
-
     }
     
     // MARK: - UITableView Datasource/Delegate

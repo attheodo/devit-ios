@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         } else {
             loadMainScene()
+            setupFirebaseModelObservers()
         }
         
         FirebaseManager.sharedInstance.performLogin(withEmail: UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail)) { isLoggedIn in
@@ -93,6 +94,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.Scenes.mainStoryboardLoginViewControllerScene)
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
+        
+    }
+    
+    public func setupFirebaseModelObservers() {
+        
+        let ModelsManager = FirebaseManager.sharedInstance
+        
+        ModelsManager.startObservingTalkSnapshots()
+        ModelsManager.startObservingSpeakerSnaphots()
+        ModelsManager.stopObservingWorkshopSnapshots()
         
     }
 
