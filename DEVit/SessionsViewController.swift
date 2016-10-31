@@ -15,7 +15,11 @@ class SessionsViewController: UIViewController {
     private var pageMenu: CAPSPageMenu!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
+        
         _configureView()
         _configurePageMenu()
 
@@ -28,6 +32,7 @@ class SessionsViewController: UIViewController {
     private func _configurePageMenu() {
         
         let talksVC = TalksViewController.instantiateFromStoryboard()
+        talksVC.parentNavController = self.navigationController!
         talksVC.title = "Talks"
         
         let workshopsVC = WorkshopsViewController.instantiateFromStoryboard()
