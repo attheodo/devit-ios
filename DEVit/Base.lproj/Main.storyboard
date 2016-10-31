@@ -19,13 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabbar-sessions-inactive" selectedImage="tabbar-sessions-active" id="acW-dT-cKf">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="cho-ME-2nR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-321"/>
+            <point key="canvasLocation" x="1724" y="-321.58920539730138"/>
         </scene>
         <!--Talks View Controller-->
         <scene sceneID="DxE-v7-PQd">
@@ -178,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3s-Lq-GO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="2368.8000000000002" y="-322.48875562218893"/>
         </scene>
         <!--Workshops View Controller-->
         <scene sceneID="zmy-fZ-tVd">
@@ -205,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFH-tj-DHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="-322"/>
+            <point key="canvasLocation" x="3012" y="-322.48875562218893"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -260,8 +258,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view-bg" translatesAutoresizingMaskIntoConstraints="NO" id="V7W-eG-7Xc"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-Ke-gUU">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="13" id="Cka-kq-qeE"/>
-                                    <constraint firstAttribute="height" constant="22" id="lRi-i7-3dx"/>
+                                    <constraint firstAttribute="width" constant="40" id="Cka-kq-qeE"/>
+                                    <constraint firstAttribute="height" constant="40" id="lRi-i7-3dx"/>
                                 </constraints>
                                 <state key="normal" image="back-chevron-icon"/>
                                 <connections>
@@ -379,13 +377,34 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.24705882352941178" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="sdY-wi-F2n" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QlM-iM-098">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdY-wi-F2n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tabbar-sessions-inactive" selectedImage="tabbar-sessions-active" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nks-jr-ENb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="vvm-Q4-FKV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHZ-UH-MGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.79999999999995" y="-321.58920539730138"/>
         </scene>
     </scenes>
     <resources>
