@@ -11,6 +11,10 @@ import UIKit
 
 class WorkshopsViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var workshopTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var workshopsTableView: UITableView!
+    
     class func instantiateFromStoryboard() -> WorkshopsViewController {
         
         let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: nil)
@@ -26,8 +30,12 @@ class WorkshopsViewController: UIViewController {
     
     // MARK: - Private Methods
     private func _configureView() {
+        
         title = "Workshops"
+        
         view.backgroundColor = Colors.lightBlue
+        workshopTypeSegmentedControl.tintColor = Colors.darkBlue
+    
     }
 
 }

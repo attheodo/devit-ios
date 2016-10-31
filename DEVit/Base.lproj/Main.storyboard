@@ -190,16 +190,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workshops" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tD4-DF-Jkn">
-                                <frame key="frameInset" minX="157" minY="282" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wPY-7p-hT7">
+                                <segments>
+                                    <segment title="All Workshops"/>
+                                    <segment title="All Day"/>
+                                    <segment title="Mini"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-Gk-3YU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gby-a2-5Oc" firstAttribute="top" secondItem="7WI-Gk-3YU" secondAttribute="bottom" constant="70" id="Vb4-3L-fkQ"/>
+                            <constraint firstItem="7WI-Gk-3YU" firstAttribute="top" secondItem="wPY-7p-hT7" secondAttribute="bottom" constant="28" id="iay-d0-lYb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7WI-Gk-3YU" secondAttribute="trailing" id="jGH-6d-LZi"/>
+                            <constraint firstItem="7WI-Gk-3YU" firstAttribute="leading" secondItem="I78-bm-Ach" secondAttribute="leadingMargin" id="jgA-Lv-xBm"/>
+                            <constraint firstItem="wPY-7p-hT7" firstAttribute="leading" secondItem="I78-bm-Ach" secondAttribute="leadingMargin" id="mXq-Ok-7CP"/>
+                            <constraint firstItem="wPY-7p-hT7" firstAttribute="top" secondItem="fMv-vH-SL7" secondAttribute="bottom" constant="28" id="nTo-17-24p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wPY-7p-hT7" secondAttribute="trailing" id="vdl-br-FXe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="workshopTypeSegmentedControl" destination="wPY-7p-hT7" id="iMx-yA-eJD"/>
+                        <outlet property="workshopsTableView" destination="7WI-Gk-3YU" id="mgm-FT-9cU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFH-tj-DHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
