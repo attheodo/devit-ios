@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-class DevitTalkTypeCell: GenericSessionCell {
+class DevitTalkTypeCell: UITableViewCell {
     
+    @IBOutlet weak var activeSessionIndicatorView: ActiveSessionIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startingTimeLabel: UILabel!
     @IBOutlet weak var sessionTypeImageView: UIImageView!
@@ -21,18 +22,19 @@ class DevitTalkTypeCell: GenericSessionCell {
     }()
     
     // MARK: - Public Properties
-    override public var talk: Talk?  {
+    public var talk: Talk?  {
         didSet {
             _setupCell()
         }
     }
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         _configureCell()
     }
     
     // MARK: - Private Methods
-    internal override func _configureCell() {
+    private func _configureCell() {
         
         backgroundColor = Colors.lightBlue!
         titleLabel.textColor = Colors.mediumBlue!
@@ -45,7 +47,15 @@ class DevitTalkTypeCell: GenericSessionCell {
         titleLabel.text = talk!.name!
         
         if let startTime = talk!.startTime {
+        
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
+            
+            if DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!) {
+                activeSessionIndicatorView.setActive()
+            } else {
+                activeSessionIndicatorView.setInactive()
+            }
+        
         }
         
         switch talk!.name! {
