@@ -199,6 +199,39 @@
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7WI-Gk-3YU">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkshopCell" rowHeight="100" id="sNR-rN-1qX" customClass="WorkshopCell" customModule="DEVit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sNR-rN-1qX" id="tIK-NV-mLS">
+                                            <frame key="frameInset" width="343" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workshop name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNV-RL-6xN">
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEg-sj-7zV">
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gNV-RL-6xN" firstAttribute="leading" secondItem="tIK-NV-mLS" secondAttribute="leadingMargin" constant="70" id="1Bw-iB-rhf"/>
+                                                <constraint firstItem="gNV-RL-6xN" firstAttribute="top" secondItem="tIK-NV-mLS" secondAttribute="top" constant="20" id="8Dm-IU-iCc"/>
+                                                <constraint firstItem="EEg-sj-7zV" firstAttribute="top" secondItem="gNV-RL-6xN" secondAttribute="bottom" constant="5" id="Uhz-Vh-Lgo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gNV-RL-6xN" secondAttribute="trailing" constant="26" id="y7a-iT-lMj"/>
+                                                <constraint firstItem="EEg-sj-7zV" firstAttribute="leading" secondItem="gNV-RL-6xN" secondAttribute="leading" id="zeO-LZ-MVp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="speakerNameLabel" destination="EEg-sj-7zV" id="Rdh-Km-adl"/>
+                                            <outlet property="workshopNameLabel" destination="gNV-RL-6xN" id="h0u-ew-eh3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="c39-Nv-dYC" id="sr1-WA-8r6"/>
                                     <outlet property="delegate" destination="c39-Nv-dYC" id="KFm-Rt-T5i"/>
@@ -211,9 +244,9 @@
                             <constraint firstItem="7WI-Gk-3YU" firstAttribute="top" secondItem="wPY-7p-hT7" secondAttribute="bottom" constant="28" id="iay-d0-lYb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7WI-Gk-3YU" secondAttribute="trailing" id="jGH-6d-LZi"/>
                             <constraint firstItem="7WI-Gk-3YU" firstAttribute="leading" secondItem="I78-bm-Ach" secondAttribute="leadingMargin" id="jgA-Lv-xBm"/>
-                            <constraint firstItem="wPY-7p-hT7" firstAttribute="leading" secondItem="I78-bm-Ach" secondAttribute="leadingMargin" id="mXq-Ok-7CP"/>
-                            <constraint firstItem="wPY-7p-hT7" firstAttribute="top" secondItem="fMv-vH-SL7" secondAttribute="bottom" constant="28" id="nTo-17-24p"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wPY-7p-hT7" secondAttribute="trailing" id="vdl-br-FXe"/>
+                            <constraint firstItem="wPY-7p-hT7" firstAttribute="leading" secondItem="I78-bm-Ach" secondAttribute="leadingMargin" constant="15" id="mXq-Ok-7CP"/>
+                            <constraint firstItem="wPY-7p-hT7" firstAttribute="top" secondItem="fMv-vH-SL7" secondAttribute="bottom" id="nTo-17-24p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wPY-7p-hT7" secondAttribute="trailing" constant="15" id="vdl-br-FXe"/>
                         </constraints>
                     </view>
                     <connections>
