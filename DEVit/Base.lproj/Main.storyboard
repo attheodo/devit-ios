@@ -66,10 +66,19 @@
                                                         <constraint firstAttribute="height" constant="15" id="Vje-gD-hf3"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-Bs-PEd" customClass="ActiveSessionIndicatorView" customModule="DEVit" customModuleProvider="target">
+                                                    <color key="backgroundColor" red="0.4642857142857143" green="0.17857142857142858" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="9p3-Hz-WaG"/>
+                                                        <constraint firstAttribute="height" constant="10" id="mwQ-8p-sCe"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hMo-Bs-PEd" firstAttribute="centerY" secondItem="jQ8-bI-RX1" secondAttribute="centerY" id="4DA-lk-qIN"/>
                                                 <constraint firstItem="jQ8-bI-RX1" firstAttribute="leading" secondItem="mmf-Lh-J0X" secondAttribute="leadingMargin" constant="5" id="DCn-Di-9H5"/>
                                                 <constraint firstItem="T0F-br-06S" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="NTp-bI-q3u"/>
+                                                <constraint firstItem="yul-bn-fpm" firstAttribute="leading" secondItem="hMo-Bs-PEd" secondAttribute="trailing" constant="10" id="O25-NF-FN6"/>
                                                 <constraint firstItem="jQ8-bI-RX1" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="OLL-pb-rZ1"/>
                                                 <constraint firstItem="yul-bn-fpm" firstAttribute="centerY" secondItem="mmf-Lh-J0X" secondAttribute="centerY" id="jUX-K3-twm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="T0F-br-06S" secondAttribute="trailing" constant="5" id="jg4-Y0-u5B"/>
@@ -77,6 +86,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activeSessionIndicatorView" destination="hMo-Bs-PEd" id="fpg-l0-nz5"/>
                                             <outlet property="sessionTypeImageView" destination="T0F-br-06S" id="sUZ-9I-iFG"/>
                                             <outlet property="startingTimeLabel" destination="jQ8-bI-RX1" id="wSZ-Ac-Bie"/>
                                             <outlet property="titleLabel" destination="yul-bn-fpm" id="j2l-sZ-fPB"/>
@@ -99,6 +109,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="023-gA-dY7" customClass="ActiveSessionIndicatorView" customModule="DEVit" customModuleProvider="target">
+                                                    <color key="backgroundColor" red="0.46428571429999999" green="0.1785714286" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="UII-2l-MFC"/>
+                                                        <constraint firstAttribute="height" constant="10" id="d85-Kf-2wz"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-Qe-9BC">
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -118,6 +135,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="S6n-Qe-9BC" firstAttribute="top" secondItem="aHY-rz-iFl" secondAttribute="bottom" constant="5" id="07k-Gk-aPb"/>
+                                                <constraint firstItem="aHY-rz-iFl" firstAttribute="leading" secondItem="023-gA-dY7" secondAttribute="trailing" constant="10" id="29W-8u-XQE"/>
                                                 <constraint firstItem="DxH-bH-HYb" firstAttribute="centerY" secondItem="6kj-AQ-w9t" secondAttribute="centerY" id="7tG-R5-e8W"/>
                                                 <constraint firstItem="6kj-AQ-w9t" firstAttribute="top" secondItem="S6n-Qe-9BC" secondAttribute="bottom" constant="9" id="9zz-vY-wTS"/>
                                                 <constraint firstItem="6kj-AQ-w9t" firstAttribute="leading" secondItem="S6n-Qe-9BC" secondAttribute="leading" id="NlR-uN-e17"/>
@@ -125,12 +143,14 @@
                                                 <constraint firstItem="S6n-Qe-9BC" firstAttribute="leading" secondItem="aHY-rz-iFl" secondAttribute="leading" id="WHl-ZN-ZDY"/>
                                                 <constraint firstItem="DxH-bH-HYb" firstAttribute="leading" secondItem="6kj-AQ-w9t" secondAttribute="trailing" constant="6" id="aFd-Rn-ALU"/>
                                                 <constraint firstItem="aHY-rz-iFl" firstAttribute="centerY" secondItem="dd1-gH-f2Z" secondAttribute="centerY" id="bdO-Yd-kxe"/>
+                                                <constraint firstItem="023-gA-dY7" firstAttribute="centerY" secondItem="dd1-gH-f2Z" secondAttribute="centerY" id="cEG-q2-uyS"/>
                                                 <constraint firstItem="dd1-gH-f2Z" firstAttribute="leading" secondItem="Hm9-vP-hxP" secondAttribute="leadingMargin" constant="5" id="qmp-ec-BgX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aHY-rz-iFl" secondAttribute="trailing" constant="10" id="tlj-8K-iyc"/>
                                                 <constraint firstItem="dd1-gH-f2Z" firstAttribute="top" secondItem="Hm9-vP-hxP" secondAttribute="topMargin" constant="16" id="zha-9H-5Re"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activeSessionIndicatorView" destination="023-gA-dY7" id="21Y-AJ-c5F"/>
                                             <outlet property="durationLabel" destination="DxH-bH-HYb" id="Pw2-Od-Z2D"/>
                                             <outlet property="speakerNameLabel" destination="S6n-Qe-9BC" id="JkE-yU-Zmu"/>
                                             <outlet property="startingTimeLabel" destination="dd1-gH-f2Z" id="qHk-7u-DyC"/>
