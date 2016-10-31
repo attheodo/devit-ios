@@ -131,6 +131,8 @@ public class FirebaseManager {
             
             NotificationCenter.default.post(name: Constants.Notifications.talksSnapshotUpdated, object: nil)
             
+            l.verbose("Fetched talks.")
+            
         
         })
         
@@ -160,6 +162,8 @@ public class FirebaseManager {
             
             NotificationCenter.default.post(name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
             
+            l.verbose("Fetched speakers.")
+            
         })
         
     }
@@ -174,18 +178,23 @@ public class FirebaseManager {
         
         workshopsObserverHandler = workshopsDbRef.observe(.value, with: { (snapshot) in
             
-            guard let workshopsJSON = snapshot.value as? NSDictionary else {
+            guard let workshopsJSON = snapshot.value as? [String: AnyObject] else {
                 return
             }
             
-            workshopsJSON.forEach { workshop in
+            self.workshops.removeAll()
             
+            workshopsJSON.forEach { workshop in
+                print(workshop.value)
                 if let workshop = Mapper<Workshop>().map(JSONObject: workshop.value) {
+                    print(workshop)
                     self.workshops.append(workshop)
                 }
             }
             
             NotificationCenter.default.post(name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
+            
+            l.verbose("Fetched workshops.")
             
         })
         
@@ -229,6 +238,8 @@ public class FirebaseManager {
        
         }
         
+        l.verbose("Finished associating talks with speakers")
+
         NotificationCenter.default.post(name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
         
     }
@@ -250,8 +261,11 @@ public class FirebaseManager {
             
             if let speaker = speakers.filter ( { $0.id == speakerId }).first {
                 workshop.speaker = speaker
+                print(workshop.speaker)
             }
         }
+        
+        l.verbose("Finished associating workshops with speakers")
         
         NotificationCenter.default.post(name: Constants.Notifications.speakersWorkshopsAssociationFinished, object: nil)
         
