@@ -11,6 +11,7 @@
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
 		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
+		4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */; };
 		4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF433581DC1222000D7510A /* AppDelegate.swift */; };
 		4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335A1DC1222000D7510A /* SessionsViewController.swift */; };
 		4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335C1DC1222000D7510A /* SecondViewController.swift */; };
@@ -37,6 +38,7 @@
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActiveSessionsIndicatorView.swift; path = Subclasses/ActiveSessionsIndicatorView.swift; sourceTree = "<group>"; };
 		4DF433551DC1221F00D7510A /* DEVit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEVit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF433581DC1222000D7510A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF4335A1DC1222000D7510A /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFD18031DC24A39006DCB62 /* CTAButton.swift */,
+				4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */,
 				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
 			);
 			name = Subclasses;
@@ -338,6 +341,7 @@
 				4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */,
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
+				4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */,
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
 				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
