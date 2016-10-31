@@ -248,7 +248,7 @@
         <!--Session View Controller-->
         <scene sceneID="r1l-ZX-7OQ">
             <objects>
-                <viewController id="TLO-tl-Nsy" customClass="SessionViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SessionsViewController" id="TLO-tl-Nsy" customClass="SessionViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eXj-rL-mI8"/>
                         <viewControllerLayoutGuide type="bottom" id="Kby-gV-5cy"/>
@@ -257,9 +257,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="view-bg" translatesAutoresizingMaskIntoConstraints="NO" id="V7W-eG-7Xc">
-                                <frame key="frameInset" minY="-2" width="375" height="313"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view-bg" translatesAutoresizingMaskIntoConstraints="NO" id="V7W-eG-7Xc"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-Ke-gUU">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="Cka-kq-qeE"/>
@@ -273,6 +271,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="V7W-eG-7Xc" firstAttribute="top" secondItem="eXj-rL-mI8" secondAttribute="bottom" constant="-22" id="Ec5-AE-8Lp"/>
                             <constraint firstItem="V7W-eG-7Xc" firstAttribute="leading" secondItem="71N-dr-HQQ" secondAttribute="leading" id="ReD-Kg-LsP"/>
                             <constraint firstItem="S7k-Ke-gUU" firstAttribute="leading" secondItem="71N-dr-HQQ" secondAttribute="leadingMargin" id="hAS-sP-PqT"/>
                             <constraint firstItem="S7k-Ke-gUU" firstAttribute="top" secondItem="eXj-rL-mI8" secondAttribute="bottom" constant="30" id="ktN-wV-gyP"/>
