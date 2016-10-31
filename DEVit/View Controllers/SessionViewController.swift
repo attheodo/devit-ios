@@ -11,13 +11,25 @@ import UIKit
 
 class SessionViewController: UIViewController {
     
+    class func instantiateFromStoryboard() -> SessionViewController {
+        
+        let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: nil)
+        return storyboard.instantiateViewController(
+            withIdentifier: Constants.Storyboards.Scenes.mainStoryboardSessionsviewControllerScene) as! SessionViewController
+        
+    }
+
+    
     // MARK: - IBActions
     @IBAction func didTapBackButton() {
-        dismiss(animated: true, completion: nil)
+        navigationController!.popViewController(animated: true)
     }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+    
     }
 }
