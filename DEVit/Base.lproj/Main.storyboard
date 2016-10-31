@@ -245,6 +245,45 @@
             </objects>
             <point key="canvasLocation" x="785" y="358"/>
         </scene>
+        <!--Session View Controller-->
+        <scene sceneID="r1l-ZX-7OQ">
+            <objects>
+                <viewController id="TLO-tl-Nsy" customClass="SessionViewController" customModule="DEVit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eXj-rL-mI8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kby-gV-5cy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="71N-dr-HQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="view-bg" translatesAutoresizingMaskIntoConstraints="NO" id="V7W-eG-7Xc">
+                                <frame key="frameInset" minY="-2" width="375" height="313"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-Ke-gUU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="Cka-kq-qeE"/>
+                                    <constraint firstAttribute="height" constant="22" id="lRi-i7-3dx"/>
+                                </constraints>
+                                <state key="normal" image="back-chevron-icon"/>
+                                <connections>
+                                    <action selector="didTapBackButton" destination="TLO-tl-Nsy" eventType="touchUpInside" id="H0P-2F-VJ7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V7W-eG-7Xc" firstAttribute="leading" secondItem="71N-dr-HQQ" secondAttribute="leading" id="ReD-Kg-LsP"/>
+                            <constraint firstItem="S7k-Ke-gUU" firstAttribute="leading" secondItem="71N-dr-HQQ" secondAttribute="leadingMargin" id="hAS-sP-PqT"/>
+                            <constraint firstItem="S7k-Ke-gUU" firstAttribute="top" secondItem="eXj-rL-mI8" secondAttribute="bottom" constant="30" id="ktN-wV-gyP"/>
+                            <constraint firstAttribute="trailing" secondItem="V7W-eG-7Xc" secondAttribute="trailing" id="xYk-XW-OBS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUH-le-lvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482" y="352"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="DcQ-su-cHs">
             <objects>
@@ -351,11 +390,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back-chevron-icon" width="13" height="20"/>
         <image name="duration-icon" width="14" height="14"/>
         <image name="email-icon" width="24" height="18"/>
         <image name="logo-big" width="309" height="118"/>
         <image name="second" width="30" height="30"/>
         <image name="tabbar-sessions-active" width="26" height="19"/>
         <image name="tabbar-sessions-inactive" width="26" height="19"/>
+        <image name="view-bg" width="375" height="313"/>
     </resources>
 </document>
