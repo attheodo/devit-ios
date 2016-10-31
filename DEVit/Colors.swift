@@ -20,4 +20,5 @@ struct Colors {
     static let mediumBlue = UIColor(hexString: "#74ABCE")
     static let darkGray = UIColor(hexString: "#4D4E4D")
     static let lightGray = UIColor(hexString: "#929496")
+    static let purple = UIColor(hexString: "#A33C89")
 }
