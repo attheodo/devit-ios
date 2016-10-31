@@ -45,7 +45,12 @@ struct Constants {
         static let talksSnapshotUpdated = Notification.Name("kDEVitNotificationsTalksSnapshotUpdated")
         /// Posted when a new speakers snapshot is fetched from Firebase
         static let speakersSnapshotUpdated = Notification.Name("kDEVitNotificationsSpeakersSnapshotUpdated")
-        /// Posted when FirebaseManager has completed relating talks/speakers
-        static let speakersTalksAssociationFinished = Notification.Name("kDEVitNotificationsSpeakersTalksRelatingFinished")
+        /// Posted when FirebaseManager has completed associating talks/speakers
+        static let speakersTalksAssociationFinished = Notification.Name("kDEVitNotificationsSpeakersTalksAssociationFinished")
+        /// Posted when a new workshops snapshot is fetched from Firebase
+        static let workshopsSnapshotUpdated = Notification.Name("kDEVitNotificationsWorkshopsSnapshotUpdated")
+        /// Posted when FirebaseManager has completed associating workshops/speaker
+        static let speakersWorkshopsAssociationFinished = Notification.Name("kDEVitNotificationsSpeakersWorkshopsAssociationFinished")
+        
     }
 }
