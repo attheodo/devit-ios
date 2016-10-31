@@ -24,6 +24,9 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - IBOutlets
     @IBOutlet weak var talksTableView: UITableView!
 
+    // MARK: - Public Properties
+    public var parentNavController: UINavigationController!
+    
     // MARK: - Private Properties
     private lazy var ModelsManager = {
        FirebaseManager.sharedInstance
@@ -33,6 +36,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         _registerNotifications()
         _configureView()
         _loadTalksData()
@@ -95,6 +99,19 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         } else {
             return 110.0
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let talks = ModelsManager.talks
+        
+        if talks[indexPath.row].type! == .speaker {
+            let sessionVC = SessionViewController.instantiateFromStoryboard()
+            parentNavController.pushViewController(sessionVC, animated: true)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
