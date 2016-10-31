@@ -26,6 +26,10 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARL: - Private Properties
+    private lazy var ModelsManager = {
+        FirebaseManager.sharedInstance
+    }()
+
     private var _workshops:[Workshop] = []
     
     override func viewDidLoad() {
@@ -35,11 +39,20 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
         _registerNotifications()
         _configureView()
         
-        HUD.show(.progress)
+        _loadWorkshops()
         
     }
     
     // MARK: - Private Methods
+    private func _loadWorkshops() {
+        
+        HUD.show(.progress)
+        
+        ModelsManager.startObservingWorkshopSnapshots()
+        ModelsManager.startObservingSpeakerSnaphots()
+        
+    }
+    
     private func _configureView() {
         
         title = "Workshops"
@@ -49,6 +62,24 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     }
     
+    private func _populateWorkshopsBasedOnSegmentedControl() {
+        
+        _workshops.removeAll()
+        
+        switch workshopTypeSegmentedControl.selectedSegmentIndex {
+        case 0:
+            _workshops = ModelsManager.workshops
+        case 1:
+            _workshops = ModelsManager.workshops.filter( { $0.isAllDay == true })
+        case 2:
+            _workshops = ModelsManager.workshops.filter( { $0.isAllDay == false })
+        
+        default:
+            _workshops = ModelsManager.workshops
+        }
+        
+    }
+    
     // MARK: - UITableView Delegate/Datasource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -56,6 +87,18 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return _workshops.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WorkshopCell") as! WorkshopCell
+        cell.workshop = _workshops[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     // MARK: - Notifications
@@ -70,6 +113,7 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     @objc private func _reloadWorkshopsTableView() {
         
         HUD.hide()
+        _populateWorkshopsBasedOnSegmentedControl()
         workshopsTableView.reloadData()
     
     }
