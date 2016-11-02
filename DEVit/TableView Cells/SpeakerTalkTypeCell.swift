@@ -16,10 +16,15 @@ class SpeakerTalkTypeCell: UITableViewCell {
     @IBOutlet weak var startingTimeLabel: UILabel!
     @IBOutlet weak var speakerNameLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var profilePicImageView: SpeakerProfileImageView!
     
     // MARK: - Private Properties
     private lazy var DateManager = {
         DateFormatterManager.sharedFormatter
+    }()
+    
+    private lazy var ModelsManager = {
+        FirebaseManager.sharedInstance
     }()
     
     // MARK: - Public Properties
@@ -64,6 +69,8 @@ class SpeakerTalkTypeCell: UITableViewCell {
         titleLabel.text = talk!.name!
         speakerNameLabel.text = talk!.speaker!.name
         durationLabel.text = "\(talk!.duration!) m"
+        
+        profilePicImageView.setImageFromFirebaseStorage(withFilename: talk!.speaker!.id!, andStorageReferece: ModelsManager.speakerProfilePicsRef)
         
     }
 }
