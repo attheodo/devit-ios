@@ -109,8 +109,12 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let talks = ModelsManager.talks
         
         if talks[indexPath.row].type! == .speaker {
+            
             let sessionVC = SessionViewController.instantiateFromStoryboard()
+            sessionVC.talk = talks[indexPath.row]
+            
             parentNavController.pushViewController(sessionVC, animated: true)
+        
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
