@@ -42,11 +42,11 @@ class SpeakerTalkTypeCell: UITableViewCell {
     // MARK: - Private Methods
     private func _configureCell() {
         
-        backgroundColor = Colors.lightBlue!
-        titleLabel.textColor = Colors.darkBlue!
-        startingTimeLabel.textColor = Colors.darkGray!
-        speakerNameLabel.textColor = Colors.lightGray!
-        durationLabel.textColor = Colors.lightGray!
+        backgroundColor = Colors.lightBlue
+        titleLabel.textColor = Colors.darkBlue
+        startingTimeLabel.textColor = Colors.darkGray
+        speakerNameLabel.textColor = Colors.lightGray
+        durationLabel.textColor = Colors.lightGray
         
         accessoryType = .disclosureIndicator
         
