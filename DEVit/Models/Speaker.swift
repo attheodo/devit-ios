@@ -37,7 +37,6 @@ public class Speaker: Mappable, CustomStringConvertible {
         self.name <- map["name"]
         self.company <- map["company"]
         self.bio <- map["bio"]
-        self.profilePicFilename <- map["profile_pic"]
     
     }
 }
