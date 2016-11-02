@@ -60,6 +60,8 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - Private Methods
     private func _configureView() {
         
+        talkDetailsTableView.contentInset = UIEdgeInsetsMake(80, 0, 0, 0)
+        
         view.backgroundColor = Colors.lightBlue
         
         talkNameLabel.text = talk.name!

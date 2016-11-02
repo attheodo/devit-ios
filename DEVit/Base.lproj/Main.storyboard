@@ -436,7 +436,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tNO-VP-pW4">
-                                <rect key="frame" x="0.0" y="272.5" width="375" height="394.5"/>
+                                <rect key="frame" x="0.0" y="209" width="375" height="458"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionRatingCell" rowHeight="130" id="XgM-PL-Bzx" customClass="SessionRatingCell" customModule="DEVit" customModuleProvider="target">
@@ -599,6 +599,7 @@
                             <constraint firstItem="2Aa-rY-Muc" firstAttribute="top" secondItem="faX-g4-TRf" secondAttribute="bottom" constant="6" id="C0Y-p3-7d2"/>
                             <constraint firstItem="V7W-eG-7Xc" firstAttribute="top" secondItem="eXj-rL-mI8" secondAttribute="bottom" constant="-22" id="Ec5-AE-8Lp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Aa-rY-Muc" secondAttribute="trailing" constant="5" id="FT2-E3-A2C"/>
+                            <constraint firstItem="tNO-VP-pW4" firstAttribute="top" secondItem="2Aa-rY-Muc" secondAttribute="bottom" constant="10" id="HQO-wb-6F9"/>
                             <constraint firstAttribute="trailing" secondItem="tNO-VP-pW4" secondAttribute="trailing" id="NuQ-Ol-Zbd"/>
                             <constraint firstItem="WuW-As-PxS" firstAttribute="top" secondItem="GiD-zw-JIY" secondAttribute="bottom" constant="10" id="O2K-Jf-Y2n"/>
                             <constraint firstItem="V7W-eG-7Xc" firstAttribute="leading" secondItem="71N-dr-HQQ" secondAttribute="leading" id="ReD-Kg-LsP"/>
@@ -612,7 +613,6 @@
                             <constraint firstItem="WuW-As-PxS" firstAttribute="centerX" secondItem="2Aa-rY-Muc" secondAttribute="centerX" id="ipn-ZC-F8x"/>
                             <constraint firstItem="S7k-Ke-gUU" firstAttribute="top" secondItem="eXj-rL-mI8" secondAttribute="bottom" constant="30" id="ktN-wV-gyP"/>
                             <constraint firstAttribute="trailing" secondItem="V7W-eG-7Xc" secondAttribute="trailing" id="xYk-XW-OBS"/>
-                            <constraint firstItem="tNO-VP-pW4" firstAttribute="top" secondItem="WuW-As-PxS" secondAttribute="bottom" constant="20" id="yFW-LB-bjB"/>
                             <constraint firstItem="faX-g4-TRf" firstAttribute="leading" secondItem="S7k-Ke-gUU" secondAttribute="trailing" constant="10" id="yWj-39-CVo"/>
                         </constraints>
                     </view>
