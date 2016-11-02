@@ -109,7 +109,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.devitTalkType.reuseIdentifier) as! SpeakerTalkTypeCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.speakerTalkType.reuseIdentifier) as! SpeakerTalkTypeCell
             cell.talk = talks[indexPath.row]
             
             return cell
