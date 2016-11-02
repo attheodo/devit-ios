@@ -8,6 +8,9 @@ PODS:
   - Firebase/Database (3.7.1):
     - Firebase/Core
     - FirebaseDatabase (= 3.0.3)
+  - Firebase/Storage (3.7.1):
+    - Firebase/Core
+    - FirebaseStorage (= 1.0.3)
   - FirebaseAnalytics (3.4.4):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
@@ -23,6 +26,9 @@ PODS:
   - FirebaseDatabase (3.0.3):
     - FirebaseAnalytics (~> 3.3)
   - FirebaseInstanceID (1.0.8)
+  - FirebaseStorage (1.0.3):
+    - FirebaseAnalytics (~> 3.3)
+    - GoogleNetworkingUtilities (~> 1.2)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleNetworkingUtilities (1.2.2):
@@ -30,6 +36,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - Kingfisher (3.1.4)
   - ObjectMapper (2.1.0)
   - PageMenu (1.2.9)
   - PKHUD (4.0.0)
@@ -42,6 +49,8 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Storage
+  - Kingfisher
   - ObjectMapper
   - PageMenu (from `git@github.com:orazz/PageMenu.git`)
   - PKHUD (~> 4.0)
@@ -70,16 +79,18 @@ SPEC CHECKSUMS:
   FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
   FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  FirebaseStorage: 3992817bf405f5c1a4f8349678d22724cd0ef509
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 49520c1557ec2737bdb981dee5a5eae849560552
+PODFILE CHECKSUM: d7dd4f94c25ef0a25aea0c5b69f0599a35230a0a
 
 COCOAPODS: 1.1.0.rc.3
