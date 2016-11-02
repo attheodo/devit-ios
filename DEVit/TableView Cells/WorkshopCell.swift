@@ -15,14 +15,19 @@ class WorkshopCell: UITableViewCell {
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var speakerNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var profilePicImageView: SpeakerProfileImageView!
     
+    
+    private lazy var ModelsManager = {
+        FirebaseManager.sharedInstance
+    }()
+
     // MARK: - Public Properties
     public var workshop: Workshop?  {
         didSet {
             _setupCell()
         }
     }
-
     
     override func awakeFromNib() {
         
@@ -49,6 +54,8 @@ class WorkshopCell: UITableViewCell {
         workshopNameLabel.text = workshop!.name!
         locationLabel.text = workshop!.location!
         speakerNameLabel.text = workshop!.speaker!.name
+        
+        profilePicImageView.setImageFromFirebaseStorage(withFilename: workshop!.speaker!.id!, andStorageReferece: ModelsManager.speakerProfilePicsRef)
         
     }
 }
