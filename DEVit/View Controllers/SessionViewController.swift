@@ -11,15 +11,21 @@ import UIKit
 
 import TagListView
 
-class SessionViewController: UIViewController {
+class SessionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - IBOutlets
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var talkNameLabel: UILabel!
     @IBOutlet weak var talkTagsView: TagListView!
+    @IBOutlet weak var talkDetailsTableView: UITableView!
     
     // MARK: - Public Properties
     public var talk: Talk!
+    private enum TalkDetailsTableViewRows: Int {
+        case rating
+        case details
+        case speaker
+    }
     
     class func instantiateFromStoryboard() -> SessionViewController {
         
@@ -79,6 +85,34 @@ class SessionViewController: UIViewController {
         }
         
 
+    }
+    
+    // MARK: - TableView Delegate/Datasource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SessionRatingCell") as! SessionRatingCell
+            return cell
+        default:
+            return tableView.dequeueReusableCell(withIdentifier: "Crash-in-hell")!
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case TalkDetailsTableViewRows.rating.rawValue:
+            return 140
+        default:
+            return 0
+        }
     }
     
 }
