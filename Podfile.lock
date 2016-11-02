@@ -1,4 +1,5 @@
 PODS:
+  - Cosmos (7.0.0)
   - Firebase/Auth (3.7.1):
     - Firebase/Core
     - FirebaseAuth (= 3.0.5)
@@ -41,11 +42,13 @@ PODS:
   - PageMenu (1.2.9)
   - PKHUD (4.0.0)
   - SwiftHEXColors (1.0.4)
+  - TagListView (1.1.0)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - Cosmos (~> 7.0)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -55,6 +58,7 @@ DEPENDENCIES:
   - PageMenu (from `git@github.com:orazz/PageMenu.git`)
   - PKHUD (~> 4.0)
   - SwiftHEXColors (from `git@github.com:thii/SwiftHEXColors.git`, branch `swift-3.0`)
+  - TagListView (~> 1.0)
   - XCGLogger
 
 EXTERNAL SOURCES:
@@ -73,6 +77,7 @@ CHECKOUT OPTIONS:
     :git: git@github.com:thii/SwiftHEXColors.git
 
 SPEC CHECKSUMS:
+  Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -89,8 +94,9 @@ SPEC CHECKSUMS:
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
+  TagListView: d0267a71393f3c73db5c9ea2f979ac1125fcab56
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: d7dd4f94c25ef0a25aea0c5b69f0599a35230a0a
+PODFILE CHECKSUM: f111b4fc0e37e9dc5f59514f93a7a7d8e66b74cd
 
 COCOAPODS: 1.1.0.rc.3
