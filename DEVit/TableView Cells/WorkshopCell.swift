@@ -39,11 +39,11 @@ class WorkshopCell: UITableViewCell {
     // MARK: - Private Methods
     private func _configureCell() {
 
-        backgroundColor = Colors.lightBlue!
+        backgroundColor = Colors.lightBlue
         
-        workshopNameLabel.textColor = Colors.darkBlue!
-        speakerNameLabel.textColor = Colors.lightGray!
-        locationLabel.textColor = Colors.lightGray!
+        workshopNameLabel.textColor = Colors.darkBlue
+        speakerNameLabel.textColor = Colors.lightGray
+        locationLabel.textColor = Colors.lightGray
         
         accessoryType = .disclosureIndicator
 
