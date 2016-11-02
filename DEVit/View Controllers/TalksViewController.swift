@@ -63,6 +63,31 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - UITableView Datasource/Delegate
+    private enum TalksTableViewCells {
+        
+        case devitTalkType
+        case speakerTalkType
+        
+        var reuseIdentifier: String {
+            switch self {
+            case .devitTalkType:
+                return "DevitTalkTypeCell"
+            case .speakerTalkType:
+                return "SpeakerTalkTypeCell"
+            }
+        }
+        
+        var cellHeight: CGFloat {
+            switch self {
+            case .devitTalkType:
+                return 60
+            case .speakerTalkType:
+                return 110
+            }
+        }
+
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -77,14 +102,14 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if talks[indexPath.row].type! == .devit {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DevitTalkTypeCell") as! DevitTalkTypeCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.devitTalkType.reuseIdentifier) as! DevitTalkTypeCell
             cell.talk = talks[indexPath.row]
             
             return cell
         
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SpeakerTalkTypeCell") as! SpeakerTalkTypeCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.devitTalkType.reuseIdentifier) as! SpeakerTalkTypeCell
             cell.talk = talks[indexPath.row]
             
             return cell
@@ -97,9 +122,9 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let talks = ModelsManager.talks
         
         if talks[indexPath.row].type! == .devit {
-            return 60.0
+            return TalksTableViewCells.devitTalkType.cellHeight
         } else {
-            return 110.0
+            return TalksTableViewCells.speakerTalkType.cellHeight
         }
         
     }
