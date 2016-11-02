@@ -88,6 +88,26 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: - UITableView Delegate/Datasource
+    private enum WorkshopsTableViewCells {
+        
+        case workshop
+        
+        var reuseIdentifier: String {
+            switch self {
+            case .workshop:
+                return "WorkshopCell"
+            }
+        }
+        
+        var cellHeight: CGFloat {
+            switch self {
+            case .workshop:
+                return 100
+            }
+        }
+        
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -98,14 +118,14 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WorkshopCell") as! WorkshopCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: WorkshopsTableViewCells.workshop.reuseIdentifier) as! WorkshopCell
         cell.workshop = _workshops[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return WorkshopsTableViewCells.workshop.cellHeight
     }
     
     // MARK: - Notifications
