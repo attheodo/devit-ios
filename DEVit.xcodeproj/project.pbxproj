@@ -11,6 +11,8 @@
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
 		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
+		4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */; };
+		4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */; };
 		4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */; };
 		4DEA0E751DC795DA005212D8 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E741DC795DA005212D8 /* SessionViewController.swift */; };
 		4DEA0E771DC7BCAF005212D8 /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E761DC7BCAF005212D8 /* Workshop.swift */; };
@@ -41,6 +43,8 @@
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FirebaseStorage.swift"; path = "Extensions/UIImageView+FirebaseStorage.swift"; sourceTree = "<group>"; };
+		4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileImageView.swift; path = Subclasses/SpeakerProfileImageView.swift; sourceTree = "<group>"; };
 		4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActiveSessionsIndicatorView.swift; path = Subclasses/ActiveSessionsIndicatorView.swift; sourceTree = "<group>"; };
 		4DEA0E741DC795DA005212D8 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionViewController.swift; path = "View Controllers/SessionViewController.swift"; sourceTree = "<group>"; };
 		4DEA0E761DC7BCAF005212D8 /* Workshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workshop.swift; path = Models/Workshop.swift; sourceTree = "<group>"; };
@@ -138,6 +142,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		4D7B4DAC1DC9F226008DFA40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		4DEA0E781DC7C7A2005212D8 /* WorkshopsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 				4D22AAB41DC22FBF0020ABB3 /* Models */,
 				4D22AAA81DC1FF140020ABB3 /* View Controllers */,
 				4D22AAA91DC1FF1F0020ABB3 /* Storyboards */,
+				4D7B4DAC1DC9F226008DFA40 /* Extensions */,
 				4D22AAAA1DC1FF2B0020ABB3 /* Assets */,
 				4D22AAAB1DC1FF300020ABB3 /* Supporting Files */,
 			);
@@ -197,6 +210,7 @@
 				4DFD18031DC24A39006DCB62 /* CTAButton.swift */,
 				4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */,
 				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
+				4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -258,7 +272,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = devitconf;
 				TargetAttributes = {
 					4DF433541DC1221F00D7510A = {
@@ -362,6 +376,7 @@
 				4DFD180C1DC3966E006DCB62 /* Talk.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
 				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
+				4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */,
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
 				4DEA0E7A1DC7C8A3005212D8 /* WorkshopCell.swift in Sources */,
 				4DEA0E771DC7BCAF005212D8 /* Workshop.swift in Sources */,
@@ -373,6 +388,7 @@
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
 				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
+				4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */,
 				4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +433,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -466,6 +483,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -494,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C01FAA0CDB93BF586194229 /* Pods-DEVit.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEWZXLUE96;
 				INFOPLIST_FILE = DEVit/Info.plist;
@@ -509,6 +528,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9BB036CE4413D3C8B4AC0F7 /* Pods-DEVit.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SEWZXLUE96;
 				INFOPLIST_FILE = DEVit/Info.plist;
