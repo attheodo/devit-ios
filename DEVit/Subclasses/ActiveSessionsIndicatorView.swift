@@ -20,7 +20,7 @@ class ActiveSessionIndicatorView: UIView {
     private func _configureView() {
         
         layoutIfNeeded()
-        backgroundColor = Colors.purple!
+        backgroundColor = Colors.purple
         layer.cornerRadius = frame.height / 2
         
     }
