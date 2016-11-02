@@ -12,4 +12,6 @@ target 'DEVit' do
   pod 'XCGLogger'
   pod 'PageMenu', :git => "git@github.com:orazz/PageMenu.git"
   pod 'Kingfisher'
+  pod 'TagListView', '~> 1.0'
+  pod 'Cosmos', '~> 7.0'
 end
