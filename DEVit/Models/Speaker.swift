@@ -20,6 +20,8 @@ public class Speaker: Mappable, CustomStringConvertible {
     var company: String? = nil
     /// The bio of the speaker
     var bio: String? = nil
+    /// The filename of the profile pic
+    var profilePicFilename: String? = nil
     
     public var description: String {
         return name!
@@ -35,6 +37,7 @@ public class Speaker: Mappable, CustomStringConvertible {
         self.name <- map["name"]
         self.company <- map["company"]
         self.bio <- map["bio"]
+        self.profilePicFilename <- map["profile_pic"]
     
     }
 }
