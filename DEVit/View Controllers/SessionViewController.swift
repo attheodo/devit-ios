@@ -11,7 +11,7 @@ import UIKit
 
 import TagListView
 
-class SessionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SessionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var durationLabel: UILabel!
@@ -45,7 +45,9 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        // hack to enable swipe to go back gesture
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         _configureView()
     
@@ -87,32 +89,56 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
-    // MARK: - TableView Delegate/Datasource
+    // MARK: - UITableView Delegate/Datasource
+    private enum TalkDetailsTableViewCell {
+        
+        case sessionRating
+        case talkDescription
+        
+        var reuseIdentifier: String {
+            switch self {
+            case .sessionRating:
+                return "SessionRatingCell"
+            case .talkDescription:
+                return "TalkDescriptionCell"
+            }
+        }
+        
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SessionRatingCell") as! SessionRatingCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.sessionRating.reuseIdentifier) as! SessionRatingCell
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! TalkDescriptionCell
+            cell.talkDetailsLabel.text = talk.abstract!
             return cell
         default:
-            return tableView.dequeueReusableCell(withIdentifier: "Crash-in-hell")!
+            return UITableViewCell()
         }
+    
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case TalkDetailsTableViewRows.rating.rawValue:
-            return 140
-        default:
-            return 0
-        }
+        return UITableViewAutomaticDimension
     }
+   
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    
     
 }
