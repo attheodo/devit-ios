@@ -263,7 +263,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-lY-gPx" customClass="SpeakerProfileImageView" customModule="DEVit" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="20" width="36" height="36"/>
+                                                    <rect key="frame" x="13" y="20" width="36" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="36" id="1vX-6u-53z"/>
                                                         <constraint firstAttribute="height" constant="36" id="z3U-dT-uaU"/>
@@ -275,7 +275,7 @@
                                                 <constraint firstItem="gNV-RL-6xN" firstAttribute="top" secondItem="tIK-NV-mLS" secondAttribute="top" constant="20" id="8Dm-IU-iCc"/>
                                                 <constraint firstItem="AyT-Q8-4Mh" firstAttribute="top" secondItem="EEg-sj-7zV" secondAttribute="bottom" constant="6" id="Cc8-L9-axg"/>
                                                 <constraint firstItem="a5g-oc-GkT" firstAttribute="centerY" secondItem="AyT-Q8-4Mh" secondAttribute="centerY" id="CqU-J2-Nxe"/>
-                                                <constraint firstItem="9Hu-lY-gPx" firstAttribute="leading" secondItem="tIK-NV-mLS" secondAttribute="leadingMargin" id="DkS-eM-kSB"/>
+                                                <constraint firstItem="9Hu-lY-gPx" firstAttribute="leading" secondItem="tIK-NV-mLS" secondAttribute="leadingMargin" constant="5" id="DkS-eM-kSB"/>
                                                 <constraint firstItem="a5g-oc-GkT" firstAttribute="leading" secondItem="AyT-Q8-4Mh" secondAttribute="trailing" constant="6" id="IXr-0j-Ify"/>
                                                 <constraint firstItem="EEg-sj-7zV" firstAttribute="top" secondItem="gNV-RL-6xN" secondAttribute="bottom" constant="5" id="Uhz-Vh-Lgo"/>
                                                 <constraint firstItem="9Hu-lY-gPx" firstAttribute="top" secondItem="gNV-RL-6xN" secondAttribute="top" id="ayA-IS-ZmQ"/>
