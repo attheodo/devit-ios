@@ -54,7 +54,7 @@ class SpeakerProfileImageView: UIImageView {
         
         }
         
-        self.layer.borderColor = Colors.mediumBlue!.cgColor
+        self.layer.borderColor = Colors.mediumBlue.cgColor
         
     }
     
