@@ -45,10 +45,10 @@ class SessionsViewController: UIViewController {
             .menuItemSeparatorWidth(0),
             .menuItemWidthBasedOnTitleTextWidth(true),
             // Look & feel
-            .viewBackgroundColor(Colors.lightBlue!),
-            .scrollMenuBackgroundColor(Colors.lightBlue!),
-            .selectedMenuItemLabelColor(Colors.darkestBlue!),
-            .unselectedMenuItemLabelColor(Colors.darkestBlueFaded!),
+            .viewBackgroundColor(Colors.lightBlue),
+            .scrollMenuBackgroundColor(Colors.lightBlue),
+            .selectedMenuItemLabelColor(Colors.darkestBlue),
+            .unselectedMenuItemLabelColor(Colors.darkestBlueFaded),
             .menuItemFont(UIFont.systemFont(ofSize: 26.0, weight: UIFontWeightHeavy)),
             .useMenuLikeSegmentedControl(false),
         ]
