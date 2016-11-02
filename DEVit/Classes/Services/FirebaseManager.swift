@@ -10,10 +10,17 @@ import Foundation
 
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 import ObjectMapper
 
 public class FirebaseManager {
     
+    // MARK: - Storage
+    let speakerProfilePicsRef = FIRStorage.storage()
+                                .reference(forURL: "gs://devit-15a6e.appspot.com")
+                                .child("speaker_profile_pics")
+    
+    // MARK: - Database
     let rootDbRef = FIRDatabase.database().reference()
     let attendeesDbRef = FIRDatabase.database().reference(withPath: "attendees")
     let talksDbRef = FIRDatabase.database().reference(withPath: "talks")
@@ -206,6 +213,10 @@ public class FirebaseManager {
         workshopsDbRef.removeObserver(withHandle: workshopsObserverHandler)
     }
     
+    public func speakerProfilePicReference(forFilename filename: String) -> FIRStorageReference {
+        return speakerProfilePicsRef.child(filename)
+    }
+    
     // MARK: - Notifications
     private func _registerNotifications() {
         
@@ -263,7 +274,6 @@ public class FirebaseManager {
             
             if let speaker = speakers.filter ( { $0.id == speakerId }).first {
                 workshop.speaker = speaker
-                print(workshop.speaker)
             }
         }
         
