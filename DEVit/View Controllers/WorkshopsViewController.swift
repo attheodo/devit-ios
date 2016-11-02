@@ -43,6 +43,11 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    // MARK: - IBActions
+    @IBAction func workshopTypeSegmentedControlDidChangeValue(sender: UISegmentedControl) {
+        _populateWorkshopsBasedOnSegmentedControl()
+    }
+    
     // MARK: - Private Methods
     private func _loadWorkshops() {
         
@@ -77,6 +82,8 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
         default:
             _workshops = ModelsManager.workshops
         }
+        
+        workshopsTableView.reloadData()
         
     }
     
@@ -114,7 +121,6 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         HUD.hide()
         _populateWorkshopsBasedOnSegmentedControl()
-        workshopsTableView.reloadData()
     
     }
 
