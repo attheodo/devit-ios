@@ -36,9 +36,9 @@ class DevitTalkTypeCell: UITableViewCell {
     // MARK: - Private Methods
     private func _configureCell() {
         
-        backgroundColor = Colors.lightBlue!
-        titleLabel.textColor = Colors.mediumBlue!
-        startingTimeLabel.textColor = Colors.darkGray!
+        backgroundColor = Colors.lightBlue
+        titleLabel.textColor = Colors.mediumBlue
+        startingTimeLabel.textColor = Colors.darkGray
     
     }
     
