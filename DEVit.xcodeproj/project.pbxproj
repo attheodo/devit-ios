@@ -13,6 +13,9 @@
 		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
 		4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */; };
 		4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */; };
+		4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */; };
+		4D7B4DB41DCA2CED008DFA40 /* SessionRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DB31DCA2CED008DFA40 /* SessionRatingCell.swift */; };
+		4D7B4DB61DCA3916008DFA40 /* RoundedCornersShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DB51DCA3916008DFA40 /* RoundedCornersShadowedView.swift */; };
 		4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */; };
 		4DEA0E751DC795DA005212D8 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E741DC795DA005212D8 /* SessionViewController.swift */; };
 		4DEA0E771DC7BCAF005212D8 /* Workshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E761DC7BCAF005212D8 /* Workshop.swift */; };
@@ -45,6 +48,9 @@
 		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FirebaseStorage.swift"; path = "Extensions/UIImageView+FirebaseStorage.swift"; sourceTree = "<group>"; };
 		4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileImageView.swift; path = Subclasses/SpeakerProfileImageView.swift; sourceTree = "<group>"; };
+		4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Kerning.swift"; path = "Extensions/UILabel+Kerning.swift"; sourceTree = "<group>"; };
+		4D7B4DB31DCA2CED008DFA40 /* SessionRatingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionRatingCell.swift; path = "TableView Cells/SessionRatingCell.swift"; sourceTree = "<group>"; };
+		4D7B4DB51DCA3916008DFA40 /* RoundedCornersShadowedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedCornersShadowedView.swift; path = Subclasses/RoundedCornersShadowedView.swift; sourceTree = "<group>"; };
 		4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActiveSessionsIndicatorView.swift; path = Subclasses/ActiveSessionsIndicatorView.swift; sourceTree = "<group>"; };
 		4DEA0E741DC795DA005212D8 /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionViewController.swift; path = "View Controllers/SessionViewController.swift"; sourceTree = "<group>"; };
 		4DEA0E761DC7BCAF005212D8 /* Workshop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workshop.swift; path = Models/Workshop.swift; sourceTree = "<group>"; };
@@ -100,7 +106,7 @@
 				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
 				4DFD180F1DC3A681006DCB62 /* TalksViewController */,
 				4DEA0E781DC7C7A2005212D8 /* WorkshopsViewController */,
-				4DEA0E741DC795DA005212D8 /* SessionViewController.swift */,
+				4D7B4DB11DCA2CC1008DFA40 /* SessionViewController */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -146,8 +152,26 @@
 			isa = PBXGroup;
 			children = (
 				4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */,
+				4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4D7B4DB11DCA2CC1008DFA40 /* SessionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D7B4DB21DCA2CD2008DFA40 /* TableView Cells */,
+				4DEA0E741DC795DA005212D8 /* SessionViewController.swift */,
+			);
+			name = SessionViewController;
+			sourceTree = "<group>";
+		};
+		4D7B4DB21DCA2CD2008DFA40 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D7B4DB31DCA2CED008DFA40 /* SessionRatingCell.swift */,
+			);
+			name = "TableView Cells";
 			sourceTree = "<group>";
 		};
 		4DEA0E781DC7C7A2005212D8 /* WorkshopsViewController */ = {
@@ -209,6 +233,7 @@
 			children = (
 				4DFD18031DC24A39006DCB62 /* CTAButton.swift */,
 				4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */,
+				4D7B4DB51DCA3916008DFA40 /* RoundedCornersShadowedView.swift */,
 				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
 				4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */,
 			);
@@ -374,7 +399,9 @@
 				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
 				4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */,
 				4DFD180C1DC3966E006DCB62 /* Talk.swift in Sources */,
+				4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
+				4D7B4DB41DCA2CED008DFA40 /* SessionRatingCell.swift in Sources */,
 				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
 				4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */,
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
@@ -389,6 +416,7 @@
 				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
 				4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */,
+				4D7B4DB61DCA3916008DFA40 /* RoundedCornersShadowedView.swift in Sources */,
 				4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
