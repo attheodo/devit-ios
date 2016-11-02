@@ -14,6 +14,7 @@ class WorkshopCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var workshopNameLabel: UILabel!
     @IBOutlet weak var speakerNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     // MARK: - Public Properties
     public var workshop: Workshop?  {
@@ -34,14 +35,19 @@ class WorkshopCell: UITableViewCell {
     private func _configureCell() {
 
         backgroundColor = Colors.lightBlue!
+        
         workshopNameLabel.textColor = Colors.darkBlue!
         speakerNameLabel.textColor = Colors.lightGray!
+        locationLabel.textColor = Colors.lightGray!
+        
+        accessoryType = .disclosureIndicator
 
     }
     
     private func _setupCell() {
         
         workshopNameLabel.text = workshop!.name!
+        locationLabel.text = workshop!.location!
         speakerNameLabel.text = workshop!.speaker!.name
         
     }
