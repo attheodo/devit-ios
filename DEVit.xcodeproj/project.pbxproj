@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0010CA1DCA719C00C5DE2C /* TalkDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */; };
 		4D22AAAD1DC200C30020ABB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */; };
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2C01FAA0CDB93BF586194229 /* Pods-DEVit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.debug.xcconfig"; sourceTree = "<group>"; };
+		4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDescriptionCell.swift; sourceTree = "<group>"; };
 		4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Files/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				4D7B4DB31DCA2CED008DFA40 /* SessionRatingCell.swift */,
+				4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */,
 			);
 			name = "TableView Cells";
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			files = (
 				4DFD18161DC3C1DF006DCB62 /* Speaker.swift in Sources */,
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
+				4D0010CA1DCA719C00C5DE2C /* TalkDescriptionCell.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
 				4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */,
 				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
