@@ -99,6 +99,7 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         
+        // TODO: Revisit to make use of UITableViewAutomaticDimension
         var cellHeight: CGFloat {
             switch self {
             case .workshop:
