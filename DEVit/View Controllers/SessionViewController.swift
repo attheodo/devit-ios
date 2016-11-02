@@ -32,4 +32,9 @@ class SessionViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
 }
