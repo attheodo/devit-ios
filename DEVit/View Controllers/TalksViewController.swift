@@ -77,6 +77,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
+        // TODO: Revisit to make use of UITableViewAutomaticDimension
         var cellHeight: CGFloat {
             switch self {
             case .devitTalkType:
