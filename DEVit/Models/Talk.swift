@@ -32,6 +32,8 @@ public class Talk: Mappable, CustomStringConvertible {
     var tags: [String]? = nil
     /// The starting date of the talk
     var startTime: Date? = nil
+    /// An abstract describing the content of the talk
+    var abstract: String? = nil
     /// The duration of the talk in minutes
     var duration: Int? = nil
     /// The `id` of the speaker as declared in Firebase
@@ -54,6 +56,7 @@ public class Talk: Mappable, CustomStringConvertible {
         self.name <- map["name"]
         self.type <- (map["type"],EnumTransform<TalkType>())
         self.startTime <- (map["start_time"], DateFormatterTransform(dateFormatter: DateFormatterManager.sharedFormatter.dateFormatterForISO8601Date()))
+        self.abstract <- map["abstract"]
         self.tags <- map["tags"]
         self.duration <- map["duration"]
         self.speakerId <- map["speaker_id"]
