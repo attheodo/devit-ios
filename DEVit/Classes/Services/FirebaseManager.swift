@@ -185,12 +185,14 @@ public class FirebaseManager {
             self.workshops.removeAll()
             
             workshopsJSON.forEach { workshop in
-                print(workshop.value)
+                
                 if let workshop = Mapper<Workshop>().map(JSONObject: workshop.value) {
-                    print(workshop)
+
                     self.workshops.append(workshop)
                 }
             }
+            
+            self.workshops.sort { $0.order! < $1.order! }
             
             NotificationCenter.default.post(name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
             
