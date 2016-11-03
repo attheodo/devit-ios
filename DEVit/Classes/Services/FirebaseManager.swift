@@ -26,6 +26,7 @@ public class FirebaseManager {
     let talksDbRef = FIRDatabase.database().reference(withPath: "talks")
     let speakersDbRef = FIRDatabase.database().reference(withPath: "speakers")
     let workshopsDbRef = FIRDatabase.database().reference(withPath: "workshops")
+    let ratingsDbRef = FIRDatabase.database().reference(withPath: "ratings")
     
     // MARK: - Singleton
     static let sharedInstance = FirebaseManager()
@@ -38,6 +39,7 @@ public class FirebaseManager {
     public var talks:[Talk] = []
     public var speakers:[Speaker] = []
     public var workshops:[Workshop] = []
+    public var ratings:[Rating] = []
     
     // MARK: - Private Properties
     private lazy var Defaults = {
@@ -47,9 +49,23 @@ public class FirebaseManager {
     private var talksObserverHandler: UInt = 0
     private var speakersObserverHandler: UInt = 0
     private var workshopsObserverHandler: UInt = 0
+    private var ratingsObserverHandler: UInt = 0
     
     private var attendees: [Attendee] = []
     
+    // MARK: - Private Methods
+    private func _sanitizedEmailFromUserDefaults() -> String {
+        
+        var email = UserDefaults.standard.value(forKey: Constants.UserDefaults.userEmail) as! String
+        
+        email = email.replacingOccurrences(of: "#", with: "-")
+        email = email.replacingOccurrences(of: ".", with: "__")
+        
+        return email
+    
+    }
+    
+    // MARK: - Public Methods
     public func getAttendeesEmails(withCompletionHandler handler: @escaping (_ attendees: [Attendee]?, _ error: Error? )-> Void) {
         
         l.verbose("Getting atteendees list")
@@ -213,8 +229,58 @@ public class FirebaseManager {
         workshopsDbRef.removeObserver(withHandle: workshopsObserverHandler)
     }
     
+    public func startObservingRatingSnapshots() {
+     
+        l.verbose("Getting talk ratings")
+        
+        ratingsObserverHandler = ratingsDbRef.observe(.value, with: { (snapshot) in
+        
+            guard let ratingsJSON = snapshot.value as? [String: AnyObject] else {
+                return
+            }
+            
+            self.ratings.removeAll()
+            
+            ratingsJSON.forEach { key, value in
+                
+                if let rating = Mapper<Rating>().map(JSONObject: value[self._sanitizedEmailFromUserDefaults()]!) {
+                
+                    rating.id = key
+                    self.ratings.append(rating)
+                
+                }
+            
+            }
+            
+            l.verbose("Fetched ratings.")
+            
+        })
+    }
+    
+    public func stopObservingRatingSnapshots() {
+        ratingsDbRef.removeObserver(withHandle: ratingsObserverHandler)
+    }
+    
     public func speakerProfilePicReference(forFilename filename: String) -> FIRStorageReference {
         return speakerProfilePicsRef.child(filename)
+    }
+    
+    public func addTopicRating(forTalkId id: String, rating: Double) {
+        
+        ratingsDbRef
+            .child(id)
+            .child(_sanitizedEmailFromUserDefaults())
+            .updateChildValues(["topic": rating])
+    
+    }
+    
+    public func addPresentationRating(forTalkId id: String, rating: Double) {
+        
+        ratingsDbRef
+            .child(id)
+            .child(_sanitizedEmailFromUserDefaults())
+            .updateChildValues(["presentation": rating])
+        
     }
     
     // MARK: - Notifications
