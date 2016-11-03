@@ -59,10 +59,18 @@ class SpeakerTalkTypeCell: UITableViewCell {
             
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
             
-            if DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!) == .withinRange {
+            let timeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!)
+            
+            if timeResult == .withinRange {
                 activeSessionIndicatorView.setActive()
-            } else {
+                giveFeedbackLabel.isHidden = true
+            }  else if  timeResult == .earlier {
                 activeSessionIndicatorView.setInactive()
+                giveFeedbackLabel.isHidden = true
+            } else if timeResult == .later {
+                activeSessionIndicatorView.setInactive()
+                giveFeedbackLabel.isHidden = false
+                
             }
             
         }
