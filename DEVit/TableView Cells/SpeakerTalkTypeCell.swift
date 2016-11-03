@@ -48,7 +48,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
         startingTimeLabel.textColor = Colors.darkGray
         speakerNameLabel.textColor = Colors.lightGray
         durationLabel.textColor = Colors.lightGray
-        
+        selectionStyle = .none
         accessoryType = .disclosureIndicator
         
     }
@@ -60,17 +60,22 @@ class SpeakerTalkTypeCell: UITableViewCell {
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
             
             let timeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!)
+            let ratingDeadline = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: Constants.Config.ratingDeadlineInMinutes) // 2hrs after the presentation
             
+            // current time is during the talk
             if timeResult == .withinRange {
                 activeSessionIndicatorView.setActive()
-                giveFeedbackLabel.isHidden = true
-            }  else if  timeResult == .earlier {
+            // current time is earlier than the talk has started
+            }  else if  timeResult == .earlier || timeResult == .later {
                 activeSessionIndicatorView.setInactive()
-                giveFeedbackLabel.isHidden = true
             } else if timeResult == .later {
                 activeSessionIndicatorView.setInactive()
+            }
+            
+            if timeResult == .later && (ratingDeadline == .withinRange || ratingDeadline == .earlier) {
                 giveFeedbackLabel.isHidden = false
-                
+            } else {
+                giveFeedbackLabel.isHidden = true
             }
             
         }
