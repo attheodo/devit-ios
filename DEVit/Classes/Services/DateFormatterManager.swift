@@ -65,14 +65,15 @@ public class DateFormatterManager {
         case later
     }
     
-    public func isCurrentTimeWithinTimeRange(startingTime: Date, duration: Int) -> DateRangeResultType {
+    public func isCurrentTimeWithinTimeRange(startingTime time: Date,
+                                             duration: Int) -> DateRangeResultType {
         
         // If we're on Release configuration, take into account the whole date
         // instead of just the timestamp
         #if !DEBUG
             
             let currentTime = Date().timeIntervalSince1970
-            let startTime = startingTime.timeIntervalSince1970
+            let startTime = time.timeIntervalSince1970
             let endTime = startTime + TimeInterval((duration * 60))
             
         // In Debug configuration, just compare timestamps in order to test more easily
@@ -80,9 +81,9 @@ public class DateFormatterManager {
         #else
             
             let currentTime = dateWith_Hmm_formatAsString(fromDate: Date())
-            let startTime = dateWith_Hmm_formatAsString(fromDate: startingTime)
+            let startTime = dateWith_Hmm_formatAsString(fromDate: time)
             let timeInterval = Double(duration * 60)
-            let endTime = dateWith_Hmm_formatAsString(fromDate: startingTime.addingTimeInterval(timeInterval))
+            let endTime = dateWith_Hmm_formatAsString(fromDate: time.addingTimeInterval(timeInterval))
 
         #endif
         
