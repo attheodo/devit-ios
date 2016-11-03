@@ -151,12 +151,23 @@
                                                         <constraint firstAttribute="height" constant="36" id="wST-nU-hW4"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIVE FEEDBACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTg-uw-7Sw" customClass="GiveFeedbackLabel" customModule="DEVit" customModuleProvider="target">
+                                                    <rect key="frame" x="160" y="69" width="100" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="eRf-5o-mEy"/>
+                                                        <constraint firstAttribute="width" constant="100" id="qpS-yR-mhS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="S6n-Qe-9BC" firstAttribute="top" secondItem="aHY-rz-iFl" secondAttribute="bottom" constant="5" id="07k-Gk-aPb"/>
                                                 <constraint firstItem="aHY-rz-iFl" firstAttribute="leading" secondItem="023-gA-dY7" secondAttribute="trailing" constant="10" id="29W-8u-XQE"/>
                                                 <constraint firstItem="DxH-bH-HYb" firstAttribute="centerY" secondItem="6kj-AQ-w9t" secondAttribute="centerY" id="7tG-R5-e8W"/>
                                                 <constraint firstItem="6kj-AQ-w9t" firstAttribute="top" secondItem="S6n-Qe-9BC" secondAttribute="bottom" constant="9" id="9zz-vY-wTS"/>
+                                                <constraint firstItem="DTg-uw-7Sw" firstAttribute="leading" secondItem="DxH-bH-HYb" secondAttribute="trailing" constant="10" id="BX8-Kp-xTL"/>
                                                 <constraint firstItem="6kj-AQ-w9t" firstAttribute="leading" secondItem="S6n-Qe-9BC" secondAttribute="leading" id="NlR-uN-e17"/>
                                                 <constraint firstItem="o2h-hO-WcW" firstAttribute="top" secondItem="dd1-gH-f2Z" secondAttribute="bottom" constant="10" id="RxE-ze-rhI"/>
                                                 <constraint firstItem="o2h-hO-WcW" firstAttribute="centerX" secondItem="dd1-gH-f2Z" secondAttribute="centerX" id="SbT-0o-tbZ"/>
@@ -165,6 +176,7 @@
                                                 <constraint firstItem="DxH-bH-HYb" firstAttribute="leading" secondItem="6kj-AQ-w9t" secondAttribute="trailing" constant="6" id="aFd-Rn-ALU"/>
                                                 <constraint firstItem="aHY-rz-iFl" firstAttribute="centerY" secondItem="dd1-gH-f2Z" secondAttribute="centerY" id="bdO-Yd-kxe"/>
                                                 <constraint firstItem="023-gA-dY7" firstAttribute="centerY" secondItem="dd1-gH-f2Z" secondAttribute="centerY" id="cEG-q2-uyS"/>
+                                                <constraint firstItem="DTg-uw-7Sw" firstAttribute="centerY" secondItem="DxH-bH-HYb" secondAttribute="centerY" id="fe5-cj-Yi2"/>
                                                 <constraint firstItem="dd1-gH-f2Z" firstAttribute="leading" secondItem="Hm9-vP-hxP" secondAttribute="leadingMargin" constant="5" id="qmp-ec-BgX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aHY-rz-iFl" secondAttribute="trailing" constant="10" id="tlj-8K-iyc"/>
                                                 <constraint firstItem="dd1-gH-f2Z" firstAttribute="top" secondItem="Hm9-vP-hxP" secondAttribute="topMargin" constant="16" id="zha-9H-5Re"/>
@@ -173,6 +185,7 @@
                                         <connections>
                                             <outlet property="activeSessionIndicatorView" destination="023-gA-dY7" id="21Y-AJ-c5F"/>
                                             <outlet property="durationLabel" destination="DxH-bH-HYb" id="Pw2-Od-Z2D"/>
+                                            <outlet property="giveFeedbackLabel" destination="DTg-uw-7Sw" id="wpd-1t-GjX"/>
                                             <outlet property="profilePicImageView" destination="o2h-hO-WcW" id="c6O-8J-JR5"/>
                                             <outlet property="speakerNameLabel" destination="S6n-Qe-9BC" id="JkE-yU-Zmu"/>
                                             <outlet property="startingTimeLabel" destination="dd1-gH-f2Z" id="qHk-7u-DyC"/>
@@ -450,14 +463,18 @@
                                                     <rect key="frame" x="15" y="0.0" width="345" height="119.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIVE FEEDBACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFa-uS-vy9">
-                                                    <rect key="frame" x="30" y="15" width="83" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GIVE FEEDBACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFa-uS-vy9" customClass="GiveFeedbackLabel" customModule="DEVit" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="15" width="100" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="JFx-Wa-flZ"/>
+                                                        <constraint firstAttribute="width" constant="100" id="tCg-mx-MY4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHY-jN-LOW">
-                                                    <rect key="frame" x="30" y="44" width="37.5" height="18"/>
+                                                    <rect key="frame" x="30" y="52" width="37.5" height="10"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.38823529411764707" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -469,11 +486,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMX-Oe-y9f" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="210" y="41.5" width="135" height="23"/>
+                                                    <rect key="frame" x="210" y="45.5" width="135" height="23"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="23"/>
@@ -497,7 +514,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                            <real key="value" value="1"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="23"/>
@@ -539,6 +556,8 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="containerView" destination="1Im-dn-RgF" id="apQ-yz-ckx"/>
+                                            <outlet property="presentationRatingControl" destination="L8t-OZ-74h" id="E1l-4w-0DG"/>
+                                            <outlet property="topicRatingControl" destination="MMX-Oe-y9f" id="M1L-q2-wAk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TalkDescriptionCell" rowHeight="150" id="Kv9-fz-VxP" customClass="TalkDescriptionCell" customModule="DEVit" customModuleProvider="target">
