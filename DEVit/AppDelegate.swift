@@ -18,11 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        l.setup(level: .verbose, showThreadName: false, showLevel: true, showFileNames: true, showLineNumbers: true)
+        l.setup(level: .verbose,
+                showThreadName: false,
+                showLevel: true,
+                showFileNames: true,
+                showLineNumbers: true)
         
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
@@ -66,7 +71,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             loadMainScene()
         }
         
-        FirebaseManager.sharedInstance.performLogin(withEmail: UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail)) { isLoggedIn in
+        let email = UserDefaults.standard.string(forKey: Constants.UserDefaults.userEmail)
+        
+        FirebaseManager.sharedInstance.performLogin(withEmail: email) { isLoggedIn in
             if !isLoggedIn {
                 self.loadLoginScene()
             }
@@ -91,7 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: Bundle.main)
 
-        let rootVC = storyboard.instantiateViewController(withIdentifier: Constants.Storyboards.Scenes.mainStoryboardLoginViewControllerScene)
+        let storyboardId = Constants.Storyboards.Scenes.mainStoryboardLoginViewControllerScene
+        let rootVC = storyboard.instantiateViewController(withIdentifier: storyboardId)
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         
