@@ -35,8 +35,13 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 
-    lazy var ModelsManager = {
+    private lazy var ModelsManager = {
         FirebaseManager.sharedInstance
+    }()
+    
+    // MARK: - Private Properties
+    private lazy var DateManager = {
+        DateFormatterManager.sharedFormatter
     }()
     
     // MARK: - IBActions
@@ -101,6 +106,18 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         ModelsManager.addPresentationRating(forTalkId: talk.id!, rating: rating)
     }
     
+    private func _shouldDisplayRating() -> Bool {
+        
+        let timeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: talk.startTime!, duration: talk.duration!)
+        let ratingDeadline = DateManager.isCurrentTimeWithinTimeRange(startingTime: talk.startTime!, duration: Constants.Config.ratingDeadlineInMinutes)
+        
+        if timeResult == .later && (ratingDeadline == .withinRange || ratingDeadline == .earlier) {
+            return true
+        } else {
+            return false
+        }
+
+    }
     // MARK: - UITableView Delegate/Datasource
     private enum TalkDetailsTableViewCell {
         
@@ -118,12 +135,49 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 
+    private func _setupRatingCell() -> SessionRatingCell {
+       
+        let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.sessionRating.reuseIdentifier) as! SessionRatingCell
+        
+        if let rating = ModelsManager.ratings.filter({ $0.id == talk.id }).first {
+            cell.rating = rating
+        }
+        
+        
+        cell.topicRatingControl.didFinishTouchingCosmos = { rating in
+            self._didFinishRatingTopic(rating: rating)
+        }
+        
+        cell.presentationRatingControl.didFinishTouchingCosmos = { rating in
+            self._didFinishRatingPresentation(rating: rating)
+        }
+        
+        
+        return cell
+
+    }
+    
+    private func _setupDescriptionCell() -> TalkDescriptionCell {
+        
+        let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! TalkDescriptionCell
+        cell.talkDetailsLabel.text = talk.abstract!
+        
+        return cell
+
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        if _shouldDisplayRating() {
+            return 2
+        } else {
+            return 1
+        }
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -131,30 +185,15 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch indexPath.row {
         case 0:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.sessionRating.reuseIdentifier) as! SessionRatingCell
-            
-            if let rating = ModelsManager.ratings.filter({ $0.id == talk.id }).first {
-                cell.rating = rating
+            if _shouldDisplayRating() {
+                return _setupRatingCell()
+            } else {
+                return _setupDescriptionCell()
             }
             
-            
-            cell.topicRatingControl.didFinishTouchingCosmos = { rating in
-                self._didFinishRatingTopic(rating: rating)
-            }
-            
-            cell.presentationRatingControl.didFinishTouchingCosmos = { rating in
-                self._didFinishRatingPresentation(rating: rating)
-            }
-            
-            
-            return cell
-        
         case 1:
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! TalkDescriptionCell
-            cell.talkDetailsLabel.text = talk.abstract!
-            
-            return cell
+            return _setupDescriptionCell()
         
         default:
             return UITableViewCell()
