@@ -10,6 +10,11 @@ import Foundation
 
 struct Constants {
     
+    struct Config {
+        // The deadline in minutes for the user to be able to rate a talk
+        static let ratingDeadlineInMinutes = 2*60 // 2hrs
+    }
+    
     /// Constants related to Storyboards
     struct Storyboards {
         
