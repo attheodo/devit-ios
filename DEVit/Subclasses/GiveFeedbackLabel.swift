@@ -12,6 +12,7 @@ import UIKit
 class GiveFeedbackLabel: UILabel {
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         _configureLabel()
     }
     
