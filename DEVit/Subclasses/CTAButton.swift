@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 class CTAButton: UIButton {
+    
     override func awakeFromNib() {
+        super.awakeFromNib()
         _configure()
     }
     
