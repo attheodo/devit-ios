@@ -51,7 +51,10 @@ class DevitTalkTypeCell: UITableViewCell {
         
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
             
-            if DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!) == .withinRange {
+            let timeRangeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime,
+                                                                           duration: talk!.duration!)
+            
+            if timeRangeResult == .withinRange {
                 activeSessionIndicatorView.setActive()
             } else {
                 activeSessionIndicatorView.setInactive()
