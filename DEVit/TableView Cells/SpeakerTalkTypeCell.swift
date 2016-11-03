@@ -17,6 +17,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
     @IBOutlet weak var speakerNameLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var profilePicImageView: SpeakerProfileImageView!
+    @IBOutlet weak var giveFeedbackLabel: UILabel!
     
     // MARK: - Private Properties
     private lazy var DateManager = {
@@ -58,7 +59,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
             
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
             
-            if DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!) {
+            if DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!) == .withinRange {
                 activeSessionIndicatorView.setActive()
             } else {
                 activeSessionIndicatorView.setInactive()
@@ -71,6 +72,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
         durationLabel.text = "\(talk!.duration!) m"
         
         profilePicImageView.setImageFromFirebaseStorage(withFilename: talk!.speaker!.id!, andStorageReferece: ModelsManager.speakerProfilePicsRef)
+        
         
     }
 }

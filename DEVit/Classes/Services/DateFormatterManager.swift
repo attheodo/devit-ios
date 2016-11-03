@@ -57,9 +57,15 @@ public class DateFormatterManager {
      
      - parameter startingTime: The start of the time range 
      - parameter duration: The duration to be added in order to mark the end of the range
-     - returns: A `Bool` indicating whether the current time is within the range
+     - returns: A enum indicating whether the current time is earlier, within or after the time range
     */
-    public func isCurrentTimeWithinTimeRange(startingTime: Date, duration: Int) -> Bool {
+    public enum DateRangeResultType {
+        case earlier
+        case withinRange
+        case later
+    }
+    
+    public func isCurrentTimeWithinTimeRange(startingTime: Date, duration: Int) -> DateRangeResultType {
         
         // If we're on Release configuration, take into account the whole date
         // instead of just the timestamp
@@ -80,8 +86,15 @@ public class DateFormatterManager {
 
         #endif
         
-        return currentTime >= startTime && currentTime <= endTime ? true : false
-
+        if currentTime <= startTime {
+            return .earlier
+        } else if currentTime >= startTime && currentTime <= endTime {
+            return .withinRange
+        } else if currentTime >= endTime {
+            return .later
+        } else {
+            return .earlier
+        }
     }
     
 }
