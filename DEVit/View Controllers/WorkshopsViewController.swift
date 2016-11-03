@@ -19,9 +19,12 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     class func instantiateFromStoryboard() -> WorkshopsViewController {
         
-        let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: nil)
+        let storyboardId = Constants.Storyboards.mainStoryboard
+        let sceneId = Constants.Storyboards.Scenes.mainStoryboardWorkshopsViewControllerScene
+        
+        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
         return storyboard.instantiateViewController(
-            withIdentifier: Constants.Storyboards.Scenes.mainStoryboardWorkshopsViewControllerScene) as! WorkshopsViewController
+            withIdentifier: sceneId) as! WorkshopsViewController
     
     }
     
@@ -119,7 +122,8 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: WorkshopsTableViewCells.workshop.reuseIdentifier) as! WorkshopCell
+        let reuseId = WorkshopsTableViewCells.workshop.reuseIdentifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseId) as! WorkshopCell
         cell.workshop = _workshops[indexPath.row]
         
         return cell
@@ -133,7 +137,10 @@ class WorkshopsViewController: UIViewController, UITableViewDelegate, UITableVie
     private func _registerNotifications() {
         
         let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(self._reloadWorkshopsTableView), name: Constants.Notifications.speakersWorkshopsAssociationFinished, object: nil)
+        nc.addObserver(self,
+                       selector: #selector(self._reloadWorkshopsTableView),
+                       name: Constants.Notifications.speakersWorkshopsAssociationFinished,
+                       object: nil)
         
     }
     
