@@ -22,7 +22,7 @@ class GiveFeedbackLabel: UILabel {
     // MARK: - Private Methods
     private func _configureLabel() {
         
-        backgroundColor = Colors.orange
+        backgroundColor = Colors.orangeBright
         layer.cornerRadius = 3.0
         clipsToBounds = true
         
