@@ -15,9 +15,12 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     class func instantiateFromStoryboard() -> TalksViewController {
         
-        let storyboard = UIStoryboard(name: Constants.Storyboards.mainStoryboard, bundle: nil)
+        let storyboardId = Constants.Storyboards.mainStoryboard
+        let sceneId = Constants.Storyboards.Scenes.mainStoryboardTalksViewControllerScene
+        
+        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
         return storyboard.instantiateViewController(
-            withIdentifier: Constants.Storyboards.Scenes.mainStoryboardTalksViewControllerScene) as! TalksViewController
+            withIdentifier: sceneId) as! TalksViewController
     
     }
     
@@ -104,14 +107,16 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if talks[indexPath.row].type! == .devit {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.devitTalkType.reuseIdentifier) as! DevitTalkTypeCell
+            let reuseId = TalksTableViewCells.devitTalkType.reuseIdentifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseId) as! DevitTalkTypeCell
             cell.talk = talks[indexPath.row]
             
             return cell
         
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: TalksTableViewCells.speakerTalkType.reuseIdentifier) as! SpeakerTalkTypeCell
+            let reuseId = TalksTableViewCells.speakerTalkType.reuseIdentifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseId) as! SpeakerTalkTypeCell
             cell.talk = talks[indexPath.row]
             
             return cell
@@ -152,7 +157,10 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private func _registerNotifications() {
         
         let nc = NotificationCenter.default
-        nc.addObserver(self, selector: #selector(self._reloadTalksTableView), name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
+        nc.addObserver(self,
+                       selector: #selector(self._reloadTalksTableView),
+                       name: Constants.Notifications.speakersTalksAssociationFinished,
+                       object: nil)
     
     }
     
