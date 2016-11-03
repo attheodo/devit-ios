@@ -12,6 +12,8 @@
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
 		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
+		4D53A2771DCB67C500A28ECE /* GiveFeedbackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53A2761DCB67C500A28ECE /* GiveFeedbackLabel.swift */; };
+		4D53A2791DCB7E4800A28ECE /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53A2781DCB7E4800A28ECE /* Rating.swift */; };
 		4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */; };
 		4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */; };
 		4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */; };
@@ -48,6 +50,8 @@
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		4D53A2761DCB67C500A28ECE /* GiveFeedbackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiveFeedbackLabel.swift; path = Subclasses/GiveFeedbackLabel.swift; sourceTree = "<group>"; };
+		4D53A2781DCB7E4800A28ECE /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rating.swift; path = Models/Rating.swift; sourceTree = "<group>"; };
 		4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FirebaseStorage.swift"; path = "Extensions/UIImageView+FirebaseStorage.swift"; sourceTree = "<group>"; };
 		4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileImageView.swift; path = Subclasses/SpeakerProfileImageView.swift; sourceTree = "<group>"; };
 		4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Kerning.swift"; path = "Extensions/UILabel+Kerning.swift"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				4DFD180B1DC3966E006DCB62 /* Talk.swift */,
 				4DEA0E761DC7BCAF005212D8 /* Workshop.swift */,
 				4DFD18151DC3C1DF006DCB62 /* Speaker.swift */,
+				4D53A2781DCB7E4800A28ECE /* Rating.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				4DFD18031DC24A39006DCB62 /* CTAButton.swift */,
+				4D53A2761DCB67C500A28ECE /* GiveFeedbackLabel.swift */,
 				4DEA0E701DC76981005212D8 /* ActiveSessionsIndicatorView.swift */,
 				4D7B4DB51DCA3916008DFA40 /* RoundedCornersShadowedView.swift */,
 				4DFD18051DC24B73006DCB62 /* BottomBorderTextField.swift */,
@@ -415,8 +421,10 @@
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
 				4DEA0E751DC795DA005212D8 /* SessionViewController.swift in Sources */,
+				4D53A2791DCB7E4800A28ECE /* Rating.swift in Sources */,
 				4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */,
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
+				4D53A2771DCB67C500A28ECE /* GiveFeedbackLabel.swift in Sources */,
 				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
 				4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */,
