@@ -25,6 +25,7 @@ class TalkDescriptionCell: UITableViewCell {
     // MARK: - Private Methods
     private func _configureCell() {
         
+        selectionStyle = .none
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
         
