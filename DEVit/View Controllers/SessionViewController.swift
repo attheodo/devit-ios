@@ -35,6 +35,9 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
 
+    lazy var ModelsManager = {
+        FirebaseManager.sharedInstance
+    }()
     
     // MARK: - IBActions
     @IBAction func didTapBackButton() {
@@ -88,7 +91,14 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         }
         
-
+    }
+    
+    private func _didFinishRatingTopic(rating: Double) {
+        ModelsManager.addTopicRating(forTalkId: talk.id!, rating: rating)
+    }
+    
+    private func _didFinishRatingPresentation(rating: Double) {
+        ModelsManager.addPresentationRating(forTalkId: talk.id!, rating: rating)
     }
     
     // MARK: - UITableView Delegate/Datasource
@@ -120,12 +130,32 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch indexPath.row {
         case 0:
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.sessionRating.reuseIdentifier) as! SessionRatingCell
+            
+            if let rating = ModelsManager.ratings.filter({ $0.id == talk.id }).first {
+                cell.rating = rating
+            }
+            
+            
+            cell.topicRatingControl.didFinishTouchingCosmos = { rating in
+                self._didFinishRatingTopic(rating: rating)
+            }
+            
+            cell.presentationRatingControl.didFinishTouchingCosmos = { rating in
+                self._didFinishRatingPresentation(rating: rating)
+            }
+            
+            
             return cell
+        
         case 1:
+        
             let cell = tableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! TalkDescriptionCell
             cell.talkDetailsLabel.text = talk.abstract!
+            
             return cell
+        
         default:
             return UITableViewCell()
         }
