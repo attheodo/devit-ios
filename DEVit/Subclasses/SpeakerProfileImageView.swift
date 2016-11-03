@@ -17,11 +17,18 @@ class SpeakerProfileImageView: UIImageView {
     }
     
     // MARK: - Public Properties
-    public var type: SpeakerProfileImageViewType = .small {
+    override var image: UIImage? {
         didSet {
-            _configureBorder()
+            if image != nil {
+                _configureBorder()
+            } else {
+                _removeBorder()
+            }
         }
+
     }
+    
+    public var type: SpeakerProfileImageViewType = .small
     
     override func awakeFromNib() {
       
@@ -30,15 +37,13 @@ class SpeakerProfileImageView: UIImageView {
     
     }
     
-    // MARK: - Private Properties
+    // MARK: - Private Methods
     private func _configureView() {
     
         layoutIfNeeded()
         
-        self.clipsToBounds = true
-        self.layer.cornerRadius = self.frame.height / 2
-        
-        _configureBorder()
+        clipsToBounds = true
+        layer.cornerRadius = frame.height / 2
     
     }
     
@@ -47,15 +52,19 @@ class SpeakerProfileImageView: UIImageView {
         switch type {
         
         case .small:
-            self.layer.borderWidth = 2.0
+            layer.borderWidth = 2.0
             
         case .big:
-            self.layer.borderWidth = 4.0
+            layer.borderWidth = 4.0
         
         }
         
-        self.layer.borderColor = Colors.mediumBlue.cgColor
+        layer.borderColor = Colors.mediumBlue.cgColor
         
+    }
+    
+    private func _removeBorder() {
+        layer.borderWidth = 0
     }
     
 }

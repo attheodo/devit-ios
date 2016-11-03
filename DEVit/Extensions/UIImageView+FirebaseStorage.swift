@@ -17,6 +17,8 @@ extension UIImageView {
     func setImageFromFirebaseStorage(withFilename filename: String,
                                     andStorageReferece reference: FIRStorageReference) {
         
+        image = nil
+        
         if ImageCache.default.isImageCached(forKey: filename).cached {
             self.image = ImageCache.default.retrieveImageInDiskCache(forKey: filename)
             return
@@ -25,7 +27,6 @@ extension UIImageView {
         reference.child("\(filename).png").downloadURL { url, error in
         
             guard let url = url else {
-                self.image = nil
                 return
             }
         
