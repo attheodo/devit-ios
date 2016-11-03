@@ -17,8 +17,8 @@ extension UIImageView {
     func setImageFromFirebaseStorage(withFilename filename: String,
                                     andStorageReferece reference: FIRStorageReference) {
         
-        if ImageCache.default.isImageCached(forKey: reference.name).cached {
-            self.image = ImageCache.default.retrieveImageInDiskCache(forKey: reference.name)
+        if ImageCache.default.isImageCached(forKey: filename).cached {
+            self.image = ImageCache.default.retrieveImageInDiskCache(forKey: filename)
             return
         }
         
@@ -29,7 +29,7 @@ extension UIImageView {
                 return
             }
         
-            let resource = ImageResource(downloadURL: url, cacheKey: reference.name)
+            let resource = ImageResource(downloadURL: url, cacheKey: filename)
             self.kf.setImage(with: resource)
         }
         
