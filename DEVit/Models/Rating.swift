@@ -13,8 +13,8 @@ import ObjectMapper
 public class Rating: Mappable, CustomStringConvertible {
     
     var id: String? = nil
-    var presentation: Int? = nil
-    var topic: Int? = nil
+    var presentation: Double? = nil
+    var topic: Double? = nil
     
     public var description: String {
         return "id: \(id) topicRating: \(topic) presentationRating: \(presentation)"
