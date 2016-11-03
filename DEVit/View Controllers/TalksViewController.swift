@@ -51,7 +51,7 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         ModelsManager.startObservingTalkSnapshots()
         ModelsManager.startObservingSpeakerSnaphots()
-        ModelsManager.stopObservingRatingSnapshots()
+        ModelsManager.startObservingRatingSnapshots()
     
     }
     
