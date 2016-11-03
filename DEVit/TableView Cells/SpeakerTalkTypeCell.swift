@@ -59,8 +59,10 @@ class SpeakerTalkTypeCell: UITableViewCell {
             
             startingTimeLabel.text = DateManager.dateWith_Hmm_formatAsString(fromDate: startTime)
             
-            let timeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: talk!.duration!)
-            let ratingDeadline = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime, duration: Constants.Config.ratingDeadlineInMinutes) // 2hrs after the presentation
+            let timeResult = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime,
+                                                                      duration: talk!.duration!)
+            let ratingDeadline = DateManager.isCurrentTimeWithinTimeRange(startingTime: startTime,
+                                                                          duration: Constants.Config.ratingDeadlineInMinutes) // 2hrs after the presentation
             
             // current time is during the talk
             if timeResult == .withinRange {
@@ -84,7 +86,8 @@ class SpeakerTalkTypeCell: UITableViewCell {
         speakerNameLabel.text = talk!.speaker!.name
         durationLabel.text = "\(talk!.duration!) m"
         
-        profilePicImageView.setImageFromFirebaseStorage(withFilename: talk!.speaker!.id!, andStorageReferece: ModelsManager.speakerProfilePicsRef)
+        profilePicImageView.setImageFromFirebaseStorage(withFilename: talk!.speaker!.id!,
+                                                        andStorageReferece: ModelsManager.speakerProfilePicsRef)
         
         
     }
