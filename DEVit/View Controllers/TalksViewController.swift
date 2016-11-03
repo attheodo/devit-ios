@@ -40,17 +40,18 @@ class TalksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         _registerNotifications()
         _configureView()
         
-        _loadTalks()
+        _loadData()
     
     }
     
     // MARK: - Private Methods
-    private func _loadTalks() {
+    private func _loadData() {
         
         HUD.show(.progress)
         
         ModelsManager.startObservingTalkSnapshots()
         ModelsManager.startObservingSpeakerSnaphots()
+        ModelsManager.stopObservingRatingSnapshots()
     
     }
     
