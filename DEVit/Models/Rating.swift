@@ -12,12 +12,12 @@ import ObjectMapper
 
 public class Rating: Mappable, CustomStringConvertible {
     
-    var talkId: String? = nil
+    var id: String? = nil
     var presentation: Int? = nil
     var topic: Int? = nil
     
     public var description: String {
-        return "id: \(talkId) topicRating: \(topic) presentationRating: \(presentation)"
+        return "id: \(id) topicRating: \(topic) presentationRating: \(presentation)"
     }
     
     required public init?(map: Map) {
