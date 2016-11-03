@@ -55,7 +55,10 @@ class SessionsViewController: UIViewController {
         
         pageMenu = CAPSPageMenu(
             viewControllers: [talksVC, workshopsVC],
-            frame: CGRect(x:0.0, y:22.0, width: self.view.frame.width, height: self.view.frame.height),
+            frame: CGRect(x:0.0,
+                          y:22.0,
+                          width: self.view.frame.width,
+                          height: self.view.frame.height),
             pageMenuOptions: options)
         
         self.view.addSubview(pageMenu.view)
