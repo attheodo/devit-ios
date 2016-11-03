@@ -66,7 +66,9 @@ public class FirebaseManager {
     }
     
     // MARK: - Public Methods
-    public func getAttendeesEmails(withCompletionHandler handler: @escaping (_ attendees: [Attendee]?, _ error: Error? )-> Void) {
+    public func getAttendeesEmails(
+        withCompletionHandler handler: @escaping (_ attendees: [Attendee]?, _ error: Error? )-> Void)
+    {
         
         l.verbose("Getting atteendees list")
         
@@ -88,7 +90,10 @@ public class FirebaseManager {
     
     }
     
-    public func performLogin(withEmail email: String?, handler: @escaping (_ isLoggedIn: Bool) -> Void) {
+    public func performLogin(
+        withEmail email: String?,
+        handler: @escaping (_ isLoggedIn: Bool) -> Void)
+    {
         
         l.verbose("Performing login")
         
@@ -152,7 +157,9 @@ public class FirebaseManager {
             
             self.talks.sort { $0.order! < $1.order! }
             
-            NotificationCenter.default.post(name: Constants.Notifications.talksSnapshotUpdated, object: nil)
+            NotificationCenter.default.post(
+                name: Constants.Notifications.talksSnapshotUpdated,
+                object: nil)
             
             l.verbose("Fetched talks.")
             
@@ -183,7 +190,9 @@ public class FirebaseManager {
                 }
             }
             
-            NotificationCenter.default.post(name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
+            NotificationCenter.default.post(
+                name: Constants.Notifications.speakersSnapshotUpdated,
+                object: nil)
             
             l.verbose("Fetched speakers.")
             
@@ -217,7 +226,9 @@ public class FirebaseManager {
             
             self.workshops.sort { $0.order! < $1.order! }
             
-            NotificationCenter.default.post(name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
+            NotificationCenter.default.post(
+                name: Constants.Notifications.workshopsSnapshotUpdated,
+                object: nil)
             
             l.verbose("Fetched workshops.")
             
@@ -243,7 +254,8 @@ public class FirebaseManager {
             
             ratingsJSON.forEach { key, value in
                 
-                if let rating = Mapper<Rating>().map(JSONObject: value[self._sanitizedEmailFromUserDefaults()]!) {
+                let email = self._sanitizedEmailFromUserDefaults()
+                if let rating = Mapper<Rating>().map(JSONObject: value[email]!) {
                 
                     rating.id = key
                     self.ratings.append(rating)
@@ -288,10 +300,25 @@ public class FirebaseManager {
         
         let nc = NotificationCenter.default
         
-        nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
-        nc.addObserver(self, selector: #selector(self._associateTalksWithSpeakers), name: Constants.Notifications.talksSnapshotUpdated, object: nil)
-        nc.addObserver(self, selector: #selector(self._associateWorkshopsWithSpeakers), name: Constants.Notifications.workshopsSnapshotUpdated, object: nil)
-        nc.addObserver(self, selector: #selector(self._associateWorkshopsWithSpeakers), name: Constants.Notifications.speakersSnapshotUpdated, object: nil)
+        nc.addObserver(self,
+                       selector: #selector(self._associateTalksWithSpeakers),
+                       name: Constants.Notifications.speakersSnapshotUpdated,
+                       object: nil)
+        
+        nc.addObserver(self,
+                       selector: #selector(self._associateTalksWithSpeakers),
+                       name: Constants.Notifications.talksSnapshotUpdated,
+                       object: nil)
+        
+        nc.addObserver(self,
+                       selector: #selector(self._associateWorkshopsWithSpeakers),
+                       name: Constants.Notifications.workshopsSnapshotUpdated,
+                       object: nil)
+        
+        nc.addObserver(self,
+                       selector: #selector(self._associateWorkshopsWithSpeakers),
+                       name: Constants.Notifications.speakersSnapshotUpdated,
+                       object: nil)
     
     }
     
@@ -319,7 +346,9 @@ public class FirebaseManager {
         
         l.verbose("Finished associating talks with speakers")
 
-        NotificationCenter.default.post(name: Constants.Notifications.speakersTalksAssociationFinished, object: nil)
+        NotificationCenter.default.post(
+            name: Constants.Notifications.speakersTalksAssociationFinished,
+            object: nil)
         
     }
     
@@ -345,7 +374,9 @@ public class FirebaseManager {
         
         l.verbose("Finished associating workshops with speakers")
         
-        NotificationCenter.default.post(name: Constants.Notifications.speakersWorkshopsAssociationFinished, object: nil)
+        NotificationCenter.default.post(
+            name: Constants.Notifications.speakersWorkshopsAssociationFinished,
+            object: nil)
         
     }
 
