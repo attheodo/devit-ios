@@ -23,6 +23,7 @@ struct Colors {
     static let purple = UIColor(hexString: "#A33C89")!
     static let yellow = UIColor(hexString: "#F3C82F")!
     static let orange = UIColor(hexString: "#E2642E")!
+    static let orangeBright = UIColor(hexString: "#FF751C")!
     static let green = UIColor(hexString: "#29974E")!
     static let tagColors = [purple, yellow, orange, green]
 }
