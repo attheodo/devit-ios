@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 import Kingfisher
+import KINWebBrowser
 
-class SpeakerDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SpeakerDetailsViewController:
+UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCellDelegate {
    
     class func instantiateFromStoryboard() -> SpeakerDetailsViewController {
         
@@ -36,6 +38,7 @@ class SpeakerDetailsViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func didTapBackButton() {
         navigationController!.popViewController(animated: true)
     }
+    
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -115,6 +118,7 @@ class SpeakerDetailsViewController: UIViewController, UITableViewDelegate, UITab
                 as! SocialMediaLinksCell
             
             cell.speaker = speaker
+            cell.delegate = self
             
             return cell
         
@@ -132,4 +136,70 @@ class SpeakerDetailsViewController: UIViewController, UITableViewDelegate, UITab
         return 100
     }
     
+    // MARK: - SocialMediaLinksCellDelegate
+    func didTapGithubButton(sender: UITableViewCell) {
+        
+        guard let githubURL = speaker.githubURL else {
+            return
+        }
+        
+        showWebViewController(forUrlString: githubURL)
+        
+    }
+    
+    func didTapWebsiteButton(sender: UITableViewCell) {
+        
+        guard let websiteURL = speaker.websiteURL else {
+            return
+        }
+        
+        showWebViewController(forUrlString: websiteURL)
+        
+    }
+    
+    func didTapLinkedInButton(sender: UITableViewCell) {
+        
+        guard let linkedinURL = speaker.linkedinURL else {
+            return
+        }
+        
+        let linkedinUsername = linkedinURL.components(separatedBy: "/").last!
+        
+        if UIApplication.shared.canOpenURL(URL(string: "linkedin://")!) {
+            UIApplication.shared.openURL(URL(string: "linkedin://profile/\(linkedinUsername)")!)
+        } else {
+            showWebViewController(forUrlString: linkedinURL)
+        }
+
+    }
+    
+    func didTapTwitterButton(sender: UITableViewCell) {
+       
+        guard let twitterURL = speaker.twitterURL else {
+            return
+        }
+        
+        let twitterUsername = twitterURL.components(separatedBy: "/").last!
+
+        if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
+            UIApplication.shared.openURL(URL(string: "twitter://user?screen_name=\(twitterUsername)")!)
+        } else {
+            showWebViewController(forUrlString: twitterURL)
+        }
+        
+    }
+    
+    private func showWebViewController(forUrlString urlString: String) {
+        
+        let webVC = KINWebBrowserViewController.navigationControllerWithWebBrowser()!
+        self.present(webVC, animated: true, completion: nil)
+        
+        let rootWebVC = webVC.rootWebBrowser()!
+            
+        rootWebVC.barTintColor = Colors.darkestBlue
+        rootWebVC.tintColor = Colors.lightBlue
+        
+        rootWebVC.loadURLString(urlString)
+        
+    }
 }
