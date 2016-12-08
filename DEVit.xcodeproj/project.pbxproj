@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D0010CA1DCA719C00C5DE2C /* TalkDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */; };
 		4D22AAAD1DC200C30020ABB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */; };
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
 		4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */; };
+		4D39DA2E1DF98A8B00AD9F6B /* GenericItemDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39DA2D1DF98A8B00AD9F6B /* GenericItemDescriptionCell.swift */; };
+		4D39DA301DF998EB00AD9F6B /* SocialMediaLinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39DA2F1DF998EB00AD9F6B /* SocialMediaLinksCell.swift */; };
 		4D53A2771DCB67C500A28ECE /* GiveFeedbackLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53A2761DCB67C500A28ECE /* GiveFeedbackLabel.swift */; };
 		4D53A2791DCB7E4800A28ECE /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53A2781DCB7E4800A28ECE /* Rating.swift */; };
+		4D66E66A1DF969A600DD3D31 /* TalkSpeakerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66E6691DF969A600DD3D31 /* TalkSpeakerCell.swift */; };
+		4D66E66C1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D66E66B1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift */; };
 		4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */; };
 		4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */; };
 		4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */; };
@@ -45,13 +48,16 @@
 
 /* Begin PBXFileReference section */
 		2C01FAA0CDB93BF586194229 /* Pods-DEVit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.debug.xcconfig"; sourceTree = "<group>"; };
-		4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkDescriptionCell.swift; sourceTree = "<group>"; };
 		4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Files/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		4D39DA2D1DF98A8B00AD9F6B /* GenericItemDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericItemDescriptionCell.swift; path = "TableView Cells/GenericItemDescriptionCell.swift"; sourceTree = "<group>"; };
+		4D39DA2F1DF998EB00AD9F6B /* SocialMediaLinksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialMediaLinksCell.swift; path = "TableView Cells/SocialMediaLinksCell.swift"; sourceTree = "<group>"; };
 		4D53A2761DCB67C500A28ECE /* GiveFeedbackLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiveFeedbackLabel.swift; path = Subclasses/GiveFeedbackLabel.swift; sourceTree = "<group>"; };
 		4D53A2781DCB7E4800A28ECE /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rating.swift; path = Models/Rating.swift; sourceTree = "<group>"; };
+		4D66E6691DF969A600DD3D31 /* TalkSpeakerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalkSpeakerCell.swift; path = "TableView Cells/TalkSpeakerCell.swift"; sourceTree = "<group>"; };
+		4D66E66B1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerDetailsViewController.swift; path = "View Controllers/SpeakerDetailsViewController.swift"; sourceTree = "<group>"; };
 		4D7B4DAA1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+FirebaseStorage.swift"; path = "Extensions/UIImageView+FirebaseStorage.swift"; sourceTree = "<group>"; };
 		4D7B4DAD1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerProfileImageView.swift; path = Subclasses/SpeakerProfileImageView.swift; sourceTree = "<group>"; };
 		4D7B4DAF1DC9FEA9008DFA40 /* UILabel+Kerning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Kerning.swift"; path = "Extensions/UILabel+Kerning.swift"; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				4DF4335A1DC1222000D7510A /* SessionsViewController.swift */,
 				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
 				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
+				4D66E66D1DF97B9300DD3D31 /* SpeakerDetailsViewController */,
 				4DFD180F1DC3A681006DCB62 /* TalksViewController */,
 				4DEA0E781DC7C7A2005212D8 /* WorkshopsViewController */,
 				4D7B4DB11DCA2CC1008DFA40 /* SessionViewController */,
@@ -155,6 +162,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		4D39DA311DF998F000AD9F6B /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D39DA2F1DF998EB00AD9F6B /* SocialMediaLinksCell.swift */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		4D66E66D1DF97B9300DD3D31 /* SpeakerDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D39DA311DF998F000AD9F6B /* TableView Cells */,
+				4D66E66B1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift */,
+			);
+			name = SpeakerDetailsViewController;
+			sourceTree = "<group>";
+		};
 		4D7B4DAC1DC9F226008DFA40 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				4D7B4DB31DCA2CED008DFA40 /* SessionRatingCell.swift */,
-				4D0010C91DCA719C00C5DE2C /* TalkDescriptionCell.swift */,
+				4D39DA2D1DF98A8B00AD9F6B /* GenericItemDescriptionCell.swift */,
+				4D66E6691DF969A600DD3D31 /* TalkSpeakerCell.swift */,
 			);
 			name = "TableView Cells";
 			sourceTree = "<group>";
@@ -403,13 +428,14 @@
 			files = (
 				4DFD18161DC3C1DF006DCB62 /* Speaker.swift in Sources */,
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
-				4D0010CA1DCA719C00C5DE2C /* TalkDescriptionCell.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
 				4DFD18141DC3B21C006DCB62 /* DateFormatterManager.swift in Sources */,
 				4DFD18011DC246BA006DCB62 /* Colors.swift in Sources */,
 				4DFD180A1DC3795B006DCB62 /* WorkshopsViewController.swift in Sources */,
+				4D66E66A1DF969A600DD3D31 /* TalkSpeakerCell.swift in Sources */,
 				4DFD180C1DC3966E006DCB62 /* Talk.swift in Sources */,
 				4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */,
+				4D66E66C1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
 				4D7B4DB41DCA2CED008DFA40 /* SessionRatingCell.swift in Sources */,
 				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
@@ -417,6 +443,7 @@
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
 				4DEA0E7A1DC7C8A3005212D8 /* WorkshopCell.swift in Sources */,
 				4DEA0E771DC7BCAF005212D8 /* Workshop.swift in Sources */,
+				4D39DA301DF998EB00AD9F6B /* SocialMediaLinksCell.swift in Sources */,
 				4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */,
 				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
@@ -428,6 +455,7 @@
 				4DFD18081DC3794D006DCB62 /* TalksViewController.swift in Sources */,
 				4DFD17FF1DC23254006DCB62 /* Attendee.swift in Sources */,
 				4D7B4DAE1DC9F8A1008DFA40 /* SpeakerProfileImageView.swift in Sources */,
+				4D39DA2E1DF98A8B00AD9F6B /* GenericItemDescriptionCell.swift in Sources */,
 				4D7B4DB61DCA3916008DFA40 /* RoundedCornersShadowedView.swift in Sources */,
 				4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */,
 			);
