@@ -130,7 +130,7 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
             case .sessionRating:
                 return "SessionRatingCell"
             case .talkDescription:
-                return "TalkDescriptionCell"
+                return "GenericItemDescriptionCell"
             case .talkSpeaker:
                 return "TalkSpeakerCell"
             }
@@ -160,9 +160,9 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
-    private func _setupDescriptionCell() -> TalkDescriptionCell {
+    private func _setupDescriptionCell() -> GenericItemDescriptionCell {
         
-        let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! TalkDescriptionCell
+        let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! GenericItemDescriptionCell
         cell.talkDetailsLabel.text = talk.abstract!
         
         return cell
