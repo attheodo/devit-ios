@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+protocol SocialMediaLinksCellDelegate: class {
+    
+    func didTapLinkedInButton(sender: UITableViewCell)
+    func didTapWebsiteButton(sender: UITableViewCell)
+    func didTapGithubButton(sender: UITableViewCell)
+    func didTapTwitterButton(sender: UITableViewCell)
+
+}
+
 class SocialMediaLinksCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
@@ -23,29 +32,23 @@ class SocialMediaLinksCell: UITableViewCell {
         }
     }
     
+    public weak var delegate: SocialMediaLinksCellDelegate?
+    
     // MARK: - IBActions
     @IBAction func didTapLinkedInButton() {
-        
-        let linkedinUsername = speaker.linkedinURL!.components(separatedBy: "/").last!
-        
-        if UIApplication.shared.canOpenURL(URL(string: "linkedin://")!) {
-            UIApplication.shared.openURL(URL(string: "linkedin://profile/\(linkedinUsername)")!)
-        } else {
-            return
-        }
+        delegate?.didTapLinkedInButton(sender: self)
     }
     
     @IBAction func didTapTwitterButton() {
-        
-        let twitterUsername = speaker.twitterURL!.components(separatedBy: "/").last!
-        
-        if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
-            UIApplication.shared.openURL(URL(string: "twitter://user?screen_name=\(twitterUsername)")!)
-        } else {
-            return("nop")
-        }
-
-        
+        delegate?.didTapTwitterButton(sender: self)
+    }
+    
+    @IBAction func didTapWebsiteButton() {
+        delegate?.didTapWebsiteButton(sender: self)
+    }
+    
+    @IBAction func didTapGithubButton() {
+        delegate?.didTapGithubButton(sender: self)
     }
     
     // MARK: - View Lifecycle
