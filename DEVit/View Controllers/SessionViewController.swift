@@ -163,7 +163,7 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func _setupDescriptionCell() -> GenericItemDescriptionCell {
         
         let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkDescription.reuseIdentifier) as! GenericItemDescriptionCell
-        cell.talkDetailsLabel.text = talk.abstract!
+        cell.descriptionLabel.text = talk.abstract!
         
         return cell
 
