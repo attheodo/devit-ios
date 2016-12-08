@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -603,6 +603,70 @@
                                             <outlet property="talkDetailsLabel" destination="Zle-GX-kwX" id="VXA-ZA-p0w"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TalkSpeakerCell" rowHeight="130" id="dib-Xk-n8R" customClass="TalkSpeakerCell" customModule="DEVit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dib-Xk-n8R" id="9tD-qg-sp4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8R-ig-nfK" customClass="RoundedCornersShadowedView" customModule="DEVit" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="115"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPEAKER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-7f-iZr">
+                                                            <rect key="frame" x="15" y="18" width="56" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.38823529411764707" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ASS-hj-TPF" customClass="SpeakerProfileImageView" customModule="DEVit" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="59" width="36" height="36"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="36" id="Smc-h8-wka"/>
+                                                                <constraint firstAttribute="width" constant="36" id="YVg-5N-yF8"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forbes Lindsay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgE-r1-JPy">
+                                                            <rect key="frame" x="66" y="66.5" width="116.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.24705882352941178" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-indicator-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VdO-9E-Jw8">
+                                                            <rect key="frame" x="319" y="70.5" width="10" height="13"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="a2U-yU-RdT"/>
+                                                                <constraint firstAttribute="height" constant="13" id="qdF-AT-PaC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="xgE-r1-JPy" firstAttribute="centerY" secondItem="ASS-hj-TPF" secondAttribute="centerY" id="Coi-TR-feh"/>
+                                                        <constraint firstItem="VdO-9E-Jw8" firstAttribute="centerY" secondItem="xgE-r1-JPy" secondAttribute="centerY" id="De0-dX-2kf"/>
+                                                        <constraint firstItem="xgE-r1-JPy" firstAttribute="leading" secondItem="ASS-hj-TPF" secondAttribute="trailing" constant="15" id="LNs-eT-3Py"/>
+                                                        <constraint firstItem="ASS-hj-TPF" firstAttribute="top" secondItem="JRt-7f-iZr" secondAttribute="bottom" constant="15" id="PrL-3W-Xww"/>
+                                                        <constraint firstItem="JRt-7f-iZr" firstAttribute="leading" secondItem="Q8R-ig-nfK" secondAttribute="leading" constant="15" id="h2b-9e-RNn"/>
+                                                        <constraint firstItem="ASS-hj-TPF" firstAttribute="leading" secondItem="JRt-7f-iZr" secondAttribute="leading" id="kW1-Vg-ITh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VdO-9E-Jw8" secondAttribute="trailing" constant="16" id="kgc-BA-KMO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ASS-hj-TPF" secondAttribute="bottom" constant="20" id="lbn-GM-PDY"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JRt-7f-iZr" firstAttribute="top" secondItem="9tD-qg-sp4" secondAttribute="topMargin" constant="10" id="8Io-v1-mWk"/>
+                                                <constraint firstItem="Q8R-ig-nfK" firstAttribute="leading" secondItem="9tD-qg-sp4" secondAttribute="leading" constant="15" id="KL0-sU-7ft"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q8R-ig-nfK" secondAttribute="bottom" constant="15" id="UKO-qJ-qf2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q8R-ig-nfK" secondAttribute="trailing" constant="15" id="W6O-fd-HSt"/>
+                                                <constraint firstItem="Q8R-ig-nfK" firstAttribute="top" secondItem="9tD-qg-sp4" secondAttribute="top" id="X87-re-qsd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="containerView" destination="Q8R-ig-nfK" id="srI-NP-0fC"/>
+                                            <outlet property="speakerNameLabel" destination="xgE-r1-JPy" id="W0L-lO-Pcp"/>
+                                            <outlet property="speakerProfilePicImageView" destination="ASS-hj-TPF" id="Q3h-6B-ScQ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="TLO-tl-Nsy" id="zHM-2J-IdJ"/>
@@ -644,7 +708,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUH-le-lvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.5" y="350.5"/>
+            <point key="canvasLocation" x="1479.2" y="350.37481259370315"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="DcQ-su-cHs">
@@ -779,6 +843,7 @@
     </scenes>
     <resources>
         <image name="back-chevron-icon" width="13" height="20"/>
+        <image name="disclosure-indicator-icon" width="8" height="13"/>
         <image name="duration-icon" width="14" height="14"/>
         <image name="duration-icon-white" width="14" height="14"/>
         <image name="email-icon" width="24" height="18"/>
