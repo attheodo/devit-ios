@@ -1,5 +1,5 @@
 //
-//  TalkDescriptionCell.swift
+//  GenericItemDescriptionCell.swift
 //  DEVit
 //
 //  Created by Athanasios Theodoridis on 02/11/2016.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TalkDescriptionCell: UITableViewCell {
+class GenericItemDescriptionCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var containerView: RoundedCornersShadowedView!
