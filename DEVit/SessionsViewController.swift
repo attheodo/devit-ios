@@ -47,7 +47,7 @@ class SessionsViewController: UIViewController {
             // Look & feel
             .viewBackgroundColor(Colors.lightBlue),
             .scrollMenuBackgroundColor(Colors.lightBlue),
-            .selectedMenuItemLabelColor(Colors.darkestBlue),
+            .selectedMenuItemLabelColor(Colors.darkBlue),
             .unselectedMenuItemLabelColor(Colors.darkestBlueFaded),
             .menuItemFont(UIFont.systemFont(ofSize: 26.0, weight: UIFontWeightHeavy)),
             .useMenuLikeSegmentedControl(false),
