@@ -13,7 +13,8 @@ class GenericItemDescriptionCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var containerView: RoundedCornersShadowedView!
-    @IBOutlet weak var talkDetailsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
        
