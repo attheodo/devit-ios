@@ -123,6 +123,7 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         case sessionRating
         case talkDescription
+        case talkSpeaker
         
         var reuseIdentifier: String {
             switch self {
@@ -130,6 +131,8 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return "SessionRatingCell"
             case .talkDescription:
                 return "TalkDescriptionCell"
+            case .talkSpeaker:
+                return "TalkSpeakerCell"
             }
         }
         
@@ -166,6 +169,15 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
+    private func _setupSpeakerCell() -> TalkSpeakerCell {
+        
+        let cell = talkDetailsTableView.dequeueReusableCell(withIdentifier: TalkDetailsTableViewCell.talkSpeaker.reuseIdentifier) as! TalkSpeakerCell
+        cell.speaker = talk.speaker!
+        
+        return cell
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -173,9 +185,9 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if _shouldDisplayRating() {
-            return 2
+            return 3
         } else {
-            return 1
+            return 2
         }
 
     }
@@ -192,8 +204,15 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
         case 1:
-        
-            return _setupDescriptionCell()
+            
+            if _shouldDisplayRating() {
+                return _setupDescriptionCell()
+            } else {
+                return _setupSpeakerCell()
+            }
+            
+        case 2:
+            return _setupSpeakerCell()
         
         default:
             return UITableViewCell()
