@@ -14,4 +14,5 @@ target 'DEVit' do
   pod 'Kingfisher'
   pod 'TagListView', '~> 1.0'
   pod 'Cosmos', '~> 7.0'
+  pod 'KINWebBrowser'
 end
