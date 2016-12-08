@@ -1,4 +1,5 @@
 PODS:
+  - ARChromeActivity (1.0.5)
   - Cosmos (7.0.0)
   - Firebase/Auth (3.7.1):
     - Firebase/Core
@@ -38,11 +39,15 @@ PODS:
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
   - Kingfisher (3.1.4)
+  - KINWebBrowser (1.3.2):
+    - ARChromeActivity (= 1.0.5)
+    - TUSafariActivity (= 1.0.4)
   - ObjectMapper (2.1.0)
   - PageMenu (1.2.9)
   - PKHUD (4.0.0)
   - SwiftHEXColors (1.0.4)
   - TagListView (1.1.0)
+  - TUSafariActivity (1.0.4)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
@@ -54,6 +59,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher
+  - KINWebBrowser
   - ObjectMapper
   - PageMenu (from `git@github.com:orazz/PageMenu.git`)
   - PKHUD (~> 4.0)
@@ -77,6 +83,7 @@ CHECKOUT OPTIONS:
     :git: git@github.com:thii/SwiftHEXColors.git
 
 SPEC CHECKSUMS:
+  ARChromeActivity: 821c7849b566f49583987468733a896fee35aa4d
   Cosmos: 2c8299147138758f6ebbb247cf1aeed77998bdf9
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
@@ -90,13 +97,15 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
+  KINWebBrowser: 27aa857a2aa39063ed102cca781d130b679d205f
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   PKHUD: 2bb45c936bb8afa39f3cd33ec14e8cc89f624255
   SwiftHEXColors: b0ecc7bd83a1aa2e1956f9ba51f55ebb2bcf86ef
   TagListView: d0267a71393f3c73db5c9ea2f979ac1125fcab56
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: f111b4fc0e37e9dc5f59514f93a7a7d8e66b74cd
+PODFILE CHECKSUM: a57f21e4aff014ff8557e46bd5bed8f8dec6f35b
 
 COCOAPODS: 1.1.0.rc.3
