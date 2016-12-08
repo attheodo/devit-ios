@@ -40,6 +40,18 @@ class SpeakerTalkTypeCell: UITableViewCell {
         _configureCell()
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if highlighted {
+            backgroundColor = Colors.grayBlue
+        } else {
+            backgroundColor = Colors.lightBlue
+        }
+    
+    }
+    
     // MARK: - Private Methods
     private func _configureCell() {
         
