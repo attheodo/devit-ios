@@ -22,6 +22,14 @@ public class Speaker: Mappable, CustomStringConvertible {
     var bio: String? = nil
     /// The filename of the profile pic
     var profilePicFilename: String? = nil
+    /// The twitter url of the speaker
+    var twitterURL: String? = nil
+    /// The linkedIn url of the speaker
+    var linkedinURL: String? = nil
+    /// The personal website of the speaker
+    var websiteURL: String? = nil
+    /// The github url of the speaker
+    var githubURL: String? = nil
     
     public var description: String {
         return name!
@@ -37,6 +45,10 @@ public class Speaker: Mappable, CustomStringConvertible {
         self.name <- map["name"]
         self.company <- map["company"]
         self.bio <- map["bio"]
+        self.twitterURL <- map["twitter"]
+        self.linkedinURL <- map["linkedin"]
+        self.websiteURL <- map["website"]
+        self.githubURL <- map["github"]
     
     }
 }
