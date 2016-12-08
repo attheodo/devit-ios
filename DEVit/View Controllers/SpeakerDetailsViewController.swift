@@ -54,6 +54,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCe
     private func _configureView() {
         
         view.backgroundColor = Colors.lightBlue
+        speakerDetailsTableView.contentInset = UIEdgeInsetsMake(210, 0, 0, 0)
         speakerProfilePicImageView.type = .big
         
     }
