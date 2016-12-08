@@ -220,6 +220,17 @@ class SessionViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView.cellForRow(at: indexPath)!.isKind(of: TalkSpeakerCell.self) {
+            
+            let speakerDetailsVC = SpeakerDetailsViewController.instantiateFromStoryboard()
+            speakerDetailsVC.speaker = talk.speaker!
+            
+            navigationController?.pushViewController(speakerDetailsVC, animated: true)
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
