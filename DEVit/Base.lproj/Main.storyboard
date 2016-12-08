@@ -430,7 +430,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-As-PxS" customClass="TagListView" customModule="TagListView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-As-PxS" customClass="TagListView" customModule="TagListView">
                                 <rect key="frame" x="66" y="230.5" width="288" height="22"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -485,7 +485,7 @@
                                                     <color key="textColor" red="0.0" green="0.38823529410000002" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMX-Oe-y9f" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMX-Oe-y9f" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="210" y="45.5" width="135" height="23"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
@@ -509,7 +509,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-OZ-74h" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-OZ-74h" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="210" y="79.5" width="135" height="23"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
@@ -984,6 +984,9 @@
                                                                 <constraint firstAttribute="width" constant="40" id="sBe-R5-Zn0"/>
                                                             </constraints>
                                                             <state key="normal" image="website-icon"/>
+                                                            <connections>
+                                                                <action selector="didTapWebsiteButton" destination="f9F-yN-0wK" eventType="touchUpInside" id="mYT-Ts-f42"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aC-96-ktc">
                                                             <rect key="frame" x="270" y="12" width="40" height="40"/>
@@ -992,6 +995,9 @@
                                                                 <constraint firstAttribute="width" constant="40" id="BGY-Nf-Y7C"/>
                                                             </constraints>
                                                             <state key="normal" image="github-icon"/>
+                                                            <connections>
+                                                                <action selector="didTapGithubButton" destination="f9F-yN-0wK" eventType="touchUpInside" id="7NR-60-AA9"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
