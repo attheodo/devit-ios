@@ -27,12 +27,16 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCe
     }
 
     // MARK: - IBOutlets
+    @IBOutlet weak var headerContainingView: UIView!
     @IBOutlet weak var speakerProfilePicImageView: SpeakerProfileImageView!
     @IBOutlet weak var speakerNameLabel: UILabel!
     @IBOutlet weak var speakerCompanyLabel: UILabel!
     @IBOutlet weak var speakerDetailsTableView: UITableView!
     
     public var speaker: Speaker!
+    
+    // MARK: - Private Properties
+    private let kSpeakersDetailsTableViewTopInset = CGFloat(210.0)
     
     // MARK: - IBActions
     @IBAction func didTapBackButton() {
@@ -54,7 +58,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCe
     private func _configureView() {
         
         view.backgroundColor = Colors.lightBlue
-        speakerDetailsTableView.contentInset = UIEdgeInsetsMake(210, 0, 0, 0)
+        speakerDetailsTableView.contentInset = UIEdgeInsetsMake(kSpeakersDetailsTableViewTopInset, 0, 0, 0)
         speakerProfilePicImageView.type = .big
         
     }
@@ -135,6 +139,19 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCe
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let scale = ((scrollView.contentOffset.y/kSpeakersDetailsTableViewTopInset) * -1) + 0.1
+        
+        guard scale <= 1 else {
+            return
+        }
+        
+        headerContainingView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        headerContainingView.alpha = scale
+    
     }
     
     // MARK: - SocialMediaLinksCellDelegate
