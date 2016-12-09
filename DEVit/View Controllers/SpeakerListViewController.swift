@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  SpeakerListViewController.swift
 //  DEVit
 //
 //  Created by Athanasios Theodoridis on 26/10/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SpeakerListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
