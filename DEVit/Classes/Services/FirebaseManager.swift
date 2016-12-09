@@ -27,6 +27,7 @@ public class FirebaseManager {
     let speakersDbRef = FIRDatabase.database().reference(withPath: "speakers")
     let workshopsDbRef = FIRDatabase.database().reference(withPath: "workshops")
     let ratingsDbRef = FIRDatabase.database().reference(withPath: "ratings")
+    let sponsorsDbRef = FIRDatabase.database().reference(withPath: "sponsors")
     
     // MARK: - Singleton
     static let sharedInstance = FirebaseManager()
@@ -272,6 +273,44 @@ public class FirebaseManager {
     public func stopObservingRatingSnapshots() {
         ratingsDbRef.removeObserver(withHandle: ratingsObserverHandler)
     }
+    
+    public func getSponsors(withCompletionHandler handler:
+        @escaping (_ sponsors: [String : [Sponsor]]?, _ error: Error? )-> Void)
+    {
+        
+        l.verbose("Getting sponsors list")
+        
+        sponsorsDbRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let sponsorsJSON = snapshot.value as? [String: AnyObject] else {
+                handler([:], nil)
+                return
+            }
+            
+            var sponsorsResult: [String: [Sponsor]] = [:]
+            
+            sponsorsJSON.forEach { key, sponsors in
+                
+                sponsorsResult[key] = []
+                let sponsors = sponsors as! Array<Any>
+                
+                sponsors.forEach { sponsor in
+                    
+                    if let sponsor = Mapper<Sponsor>().map(JSONObject: sponsor) {
+                        sponsorsResult[key]?.append(sponsor)
+                    }
+
+                }
+            }
+            
+            handler(sponsorsResult, nil)
+            
+        }) { (error) in
+            handler(nil, error)
+        }
+        
+    }
+
     
     public func speakerProfilePicReference(forFilename filename: String) -> FIRStorageReference {
         return speakerProfilePicsRef.child(filename)
