@@ -30,6 +30,10 @@ public class Speaker: Mappable, CustomStringConvertible {
     var websiteURL: String? = nil
     /// The github url of the speaker
     var githubURL: String? = nil
+    /// The talk the speaker is associated with
+    var talk: Talk? = nil
+    /// The workshop the speaker is associated with
+    var workshop: Workshop? = nil
     
     public var description: String {
         return name!

@@ -340,6 +340,7 @@ public class FirebaseManager {
             
             if let speaker = speakers.filter({ $0.id == speakerId }).first {
                 talk.speaker = speaker
+                speaker.talk = talk
             }
        
         }
@@ -369,6 +370,7 @@ public class FirebaseManager {
             
             if let speaker = speakers.filter ( { $0.id == speakerId }).first {
                 workshop.speaker = speaker
+                speaker.workshop = workshop
             }
         }
         
