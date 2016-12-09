@@ -57,7 +57,7 @@ class SpeakerItemCell: UITableViewCell {
         
         speakerNameLabel.text = speaker.name!
         speakerProfilePicImageView.setImageFromFirebaseStorage(
-            withFilename: speaker.id!,
+            withFilename: "\(speaker.id!).png",
             andStorageReferece: FirebaseManager.sharedInstance.speakerProfilePicsRef)
         
         if speaker.talk != nil && speaker.workshop == nil {

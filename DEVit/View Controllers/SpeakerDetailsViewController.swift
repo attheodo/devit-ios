@@ -73,7 +73,7 @@ UIViewController, UITableViewDelegate, UITableViewDataSource, SocialMediaLinksCe
             speakerCompanyLabel.text = ""
         }
         
-        speakerProfilePicImageView.setImageFromFirebaseStorage(withFilename: speaker.id!,
+        speakerProfilePicImageView.setImageFromFirebaseStorage(withFilename: "\(speaker.id!).png",
                 andStorageReferece: FirebaseManager.sharedInstance.speakerProfilePicsRef)
     
     }

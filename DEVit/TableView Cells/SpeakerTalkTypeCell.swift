@@ -98,7 +98,7 @@ class SpeakerTalkTypeCell: UITableViewCell {
         speakerNameLabel.text = talk!.speaker!.name
         durationLabel.text = "\(talk!.duration!) m"
         
-        profilePicImageView.setImageFromFirebaseStorage(withFilename: talk!.speaker!.id!,
+        profilePicImageView.setImageFromFirebaseStorage(withFilename: "\(talk!.speaker!.id!).png",
                                                         andStorageReferece: ModelsManager.speakerProfilePicsRef)
         
         

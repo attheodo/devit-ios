@@ -55,7 +55,7 @@ class WorkshopCell: UITableViewCell {
         locationLabel.text = workshop!.location!
         speakerNameLabel.text = workshop!.speaker!.name
         
-        profilePicImageView.setImageFromFirebaseStorage(withFilename: workshop!.speaker!.id!, andStorageReferece: ModelsManager.speakerProfilePicsRef)
+        profilePicImageView.setImageFromFirebaseStorage(withFilename: "\(workshop!.speaker!.id!).png", andStorageReferece: ModelsManager.speakerProfilePicsRef)
         
     }
 }

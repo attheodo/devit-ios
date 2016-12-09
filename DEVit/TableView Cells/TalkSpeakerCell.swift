@@ -50,7 +50,7 @@ class TalkSpeakerCell: UITableViewCell {
     private func _configureSpeaker() {
         
         speakerNameLabel.text = speaker.name!
-        speakerProfilePicImageView.setImageFromFirebaseStorage(withFilename: speaker.id!,
+        speakerProfilePicImageView.setImageFromFirebaseStorage(withFilename: "\(speaker.id!).png",
                                                         andStorageReferece: FirebaseManager.sharedInstance.speakerProfilePicsRef)
     
     }
