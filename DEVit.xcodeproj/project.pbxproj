@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D00CE751DFAE110002885E5 /* SpeakerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00CE741DFAE110002885E5 /* SpeakerListViewController.swift */; };
+		4D00CE791DFAE9D4002885E5 /* SpeakerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00CE781DFAE9D4002885E5 /* SpeakerItemCell.swift */; };
+		4D09B9901DFB18F7005E5D1D /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09B98F1DFB18F7005E5D1D /* Sponsor.swift */; };
 		4D22AAAD1DC200C30020ABB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */; };
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
@@ -28,7 +31,6 @@
 		4DEA0E7A1DC7C8A3005212D8 /* WorkshopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEA0E791DC7C8A3005212D8 /* WorkshopCell.swift */; };
 		4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF433581DC1222000D7510A /* AppDelegate.swift */; };
 		4DF4335B1DC1222000D7510A /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335A1DC1222000D7510A /* SessionsViewController.swift */; };
-		4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4335C1DC1222000D7510A /* SecondViewController.swift */; };
 		4DF433601DC1222000D7510A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF4335E1DC1222000D7510A /* Main.storyboard */; };
 		4DF433621DC1222000D7510A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF433611DC1222000D7510A /* Assets.xcassets */; };
 		4DF433651DC1222000D7510A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF433631DC1222000D7510A /* LaunchScreen.storyboard */; };
@@ -48,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		2C01FAA0CDB93BF586194229 /* Pods-DEVit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DEVit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DEVit/Pods-DEVit.debug.xcconfig"; sourceTree = "<group>"; };
+		4D00CE741DFAE110002885E5 /* SpeakerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerListViewController.swift; path = "View Controllers/SpeakerListViewController.swift"; sourceTree = "<group>"; };
+		4D00CE781DFAE9D4002885E5 /* SpeakerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerItemCell.swift; path = "TableView Cells/SpeakerItemCell.swift"; sourceTree = "<group>"; };
+		4D09B98F1DFB18F7005E5D1D /* Sponsor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sponsor.swift; path = Models/Sponsor.swift; sourceTree = "<group>"; };
 		4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Files/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -70,7 +75,6 @@
 		4DF433551DC1221F00D7510A /* DEVit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DEVit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF433581DC1222000D7510A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF4335A1DC1222000D7510A /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
-		4DF4335C1DC1222000D7510A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4DF4335F1DC1222000D7510A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DF433611DC1222000D7510A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DF433641DC1222000D7510A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,11 +114,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4D00CE761DFAE373002885E5 /* SpeakerListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D00CE771DFAE99D002885E5 /* TableView Cells */,
+				4D00CE741DFAE110002885E5 /* SpeakerListViewController.swift */,
+			);
+			name = SpeakerListViewController;
+			sourceTree = "<group>";
+		};
+		4D00CE771DFAE99D002885E5 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D00CE781DFAE9D4002885E5 /* SpeakerItemCell.swift */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
 		4D22AAA81DC1FF140020ABB3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D00CE761DFAE373002885E5 /* SpeakerListViewController */,
 				4DF4335A1DC1222000D7510A /* SessionsViewController.swift */,
-				4DF4335C1DC1222000D7510A /* SecondViewController.swift */,
 				4D22AAB21DC20CE90020ABB3 /* LoginViewController.swift */,
 				4D66E66D1DF97B9300DD3D31 /* SpeakerDetailsViewController */,
 				4DFD180F1DC3A681006DCB62 /* TalksViewController */,
@@ -157,6 +178,7 @@
 				4DFD180B1DC3966E006DCB62 /* Talk.swift */,
 				4DEA0E761DC7BCAF005212D8 /* Workshop.swift */,
 				4DFD18151DC3C1DF006DCB62 /* Speaker.swift */,
+				4D09B98F1DFB18F7005E5D1D /* Sponsor.swift */,
 				4D53A2781DCB7E4800A28ECE /* Rating.swift */,
 			);
 			name = Models;
@@ -426,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D00CE751DFAE110002885E5 /* SpeakerListViewController.swift in Sources */,
 				4DFD18161DC3C1DF006DCB62 /* Speaker.swift in Sources */,
 				4DFD18061DC24B73006DCB62 /* BottomBorderTextField.swift in Sources */,
 				4D22AAB31DC20CE90020ABB3 /* LoginViewController.swift in Sources */,
@@ -439,16 +462,17 @@
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
 				4D7B4DB41DCA2CED008DFA40 /* SessionRatingCell.swift in Sources */,
 				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
+				4D00CE791DFAE9D4002885E5 /* SpeakerItemCell.swift in Sources */,
 				4D7B4DAB1DC9F222008DFA40 /* UIImageView+FirebaseStorage.swift in Sources */,
 				4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */,
 				4DEA0E7A1DC7C8A3005212D8 /* WorkshopCell.swift in Sources */,
 				4DEA0E771DC7BCAF005212D8 /* Workshop.swift in Sources */,
 				4D39DA301DF998EB00AD9F6B /* SocialMediaLinksCell.swift in Sources */,
 				4DFD18121DC3A69C006DCB62 /* SpeakerTalkTypeCell.swift in Sources */,
-				4DF4335D1DC1222000D7510A /* SecondViewController.swift in Sources */,
 				4DF433591DC1222000D7510A /* AppDelegate.swift in Sources */,
 				4DEA0E751DC795DA005212D8 /* SessionViewController.swift in Sources */,
 				4D53A2791DCB7E4800A28ECE /* Rating.swift in Sources */,
+				4D09B9901DFB18F7005E5D1D /* Sponsor.swift in Sources */,
 				4DEA0E711DC76981005212D8 /* ActiveSessionsIndicatorView.swift in Sources */,
 				4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */,
 				4D53A2771DCB67C500A28ECE /* GiveFeedbackLabel.swift in Sources */,
