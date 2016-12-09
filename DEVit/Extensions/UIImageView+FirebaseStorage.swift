@@ -24,7 +24,7 @@ extension UIImageView {
             return
         }
         
-        reference.child("\(filename).png").downloadURL { url, error in
+        reference.child(filename).downloadURL { url, error in
         
             guard let url = url else {
                 return
