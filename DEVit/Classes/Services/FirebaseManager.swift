@@ -20,6 +20,10 @@ public class FirebaseManager {
                                 .reference(forURL: "gs://devit-15a6e.appspot.com")
                                 .child("speaker_profile_pics")
     
+    let sponsorLogosRef = FIRStorage.storage()
+        .reference(forURL: "gs://devit-15a6e.appspot.com")
+        .child("sponsors")
+    
     // MARK: - Database
     let rootDbRef = FIRDatabase.database().reference()
     let attendeesDbRef = FIRDatabase.database().reference(withPath: "attendees")
@@ -311,11 +315,6 @@ public class FirebaseManager {
         
     }
 
-    
-    public func speakerProfilePicReference(forFilename filename: String) -> FIRStorageReference {
-        return speakerProfilePicsRef.child(filename)
-    }
-    
     public func addTopicRating(forTalkId id: String, rating: Double) {
         
         ratingsDbRef
