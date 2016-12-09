@@ -345,6 +345,13 @@ public class FirebaseManager {
        
         }
         
+        speakers.sort {
+            if let talk1 = $0.talk, let talk2 = $1.talk {
+                return talk1.order! < talk2.order!
+            }
+            return true
+        }
+        
         l.verbose("Finished associating talks with speakers")
 
         NotificationCenter.default.post(
