@@ -11,6 +11,7 @@
 		4D00CE791DFAE9D4002885E5 /* SpeakerItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00CE781DFAE9D4002885E5 /* SpeakerItemCell.swift */; };
 		4D09B9901DFB18F7005E5D1D /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09B98F1DFB18F7005E5D1D /* Sponsor.swift */; };
 		4D09B9921DFB1A9E005E5D1D /* SponsorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09B9911DFB1A9E005E5D1D /* SponsorsViewController.swift */; };
+		4D09B9951DFB2F6C005E5D1D /* SponsorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09B9941DFB2F6C005E5D1D /* SponsorCell.swift */; };
 		4D22AAAD1DC200C30020ABB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */; };
 		4D22AAAF1DC204140020ABB3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */; };
 		4D22AAB11DC20C630020ABB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D22AAB01DC20C630020ABB3 /* Constants.swift */; };
@@ -55,6 +56,7 @@
 		4D00CE781DFAE9D4002885E5 /* SpeakerItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeakerItemCell.swift; path = "TableView Cells/SpeakerItemCell.swift"; sourceTree = "<group>"; };
 		4D09B98F1DFB18F7005E5D1D /* Sponsor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sponsor.swift; path = Models/Sponsor.swift; sourceTree = "<group>"; };
 		4D09B9911DFB1A9E005E5D1D /* SponsorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SponsorsViewController.swift; path = "View Controllers/SponsorsViewController.swift"; sourceTree = "<group>"; };
+		4D09B9941DFB2F6C005E5D1D /* SponsorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SponsorCell.swift; path = "CollectionView Cells/SponsorCell.swift"; sourceTree = "<group>"; };
 		4D22AAAC1DC200C30020ABB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting Files/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D22AAAE1DC204140020ABB3 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Classes/Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		4D22AAB01DC20C630020ABB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -136,9 +138,18 @@
 		4D09B9931DFB1AA2005E5D1D /* SponsorsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4D09B9961DFB2F86005E5D1D /* CollectionView Cells */,
 				4D09B9911DFB1A9E005E5D1D /* SponsorsViewController.swift */,
 			);
 			name = SponsorsViewController;
+			sourceTree = "<group>";
+		};
+		4D09B9961DFB2F86005E5D1D /* CollectionView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D09B9941DFB2F6C005E5D1D /* SponsorCell.swift */,
+			);
+			name = "CollectionView Cells";
 			sourceTree = "<group>";
 		};
 		4D22AAA81DC1FF140020ABB3 /* View Controllers */ = {
@@ -471,6 +482,7 @@
 				4D7B4DB01DC9FEA9008DFA40 /* UILabel+Kerning.swift in Sources */,
 				4D66E66C1DF97B9000DD3D31 /* SpeakerDetailsViewController.swift in Sources */,
 				4DFD18041DC24A39006DCB62 /* CTAButton.swift in Sources */,
+				4D09B9951DFB2F6C005E5D1D /* SponsorCell.swift in Sources */,
 				4D7B4DB41DCA2CED008DFA40 /* SessionRatingCell.swift in Sources */,
 				4DFD180E1DC3A560006DCB62 /* DevitTalkTypeCell.swift in Sources */,
 				4D00CE791DFAE9D4002885E5 /* SpeakerItemCell.swift in Sources */,
